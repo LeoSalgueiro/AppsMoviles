@@ -1,95 +1,118 @@
-div {
-    border: 0.1px solid black;
-}
-
 body {
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  background-color: #333;
+  color: white;
+  font-family: "Roboto";
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
+}
+
+a {
+  color: white;
 }
 
 .header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-    align-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
 
 .main {
-    display: flex;
-    flex-direction: row;
-    align-content: stretch;
-    flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  flex: 1;
 }
 
 .section {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .items {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 article {
-    border: 1px solid red;
-    width: 240px;
-    text-align: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  width: 240px;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+  background-color: rgb(191, 191, 191);
+  color: black;
+  border-radius: 20px;
 }
 
 .logo {
-    width: 240px;
-    height: 200px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  width: 236px;
+  padding: 2px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
-    width: 80%;
-    height: 80%;
+  width: 50%;
 }
 
 .title {
-    flex-grow: 7;
-    text-align: center;
+  flex-grow: 7;
+  text-align: center;
+}
+
+aside {
+  min-height: 100%;
+  background-color: rgb(64, 64, 64);
 }
 
 .nav {
-    width: 240px;
-    min-height: 100%;
+  width: 240px;
+  min-height: 100%;
 }
 
 .content {
-    width: 100%;
+  width: 100%;
+  min-height: 85vh;
+  background-color: rgb(70, 70, 70);
 }
 
 .product-image {
-    padding-top: 1.5rem;
-    width: 150px;
+  padding-top: 1.5rem;
+  border-radius: 5px;
+  width: 150px;
 }
 
 .footer {
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+#cat {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+  .content {
+    min-height: 80vh;
+  }
 }
