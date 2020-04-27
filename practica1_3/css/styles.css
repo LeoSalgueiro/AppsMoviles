@@ -62,7 +62,7 @@ article {
 }
 
 .logo {
-  width: 236px;
+  width: 13%;
   padding: 2px;
   display: flex;
   text-align: center;
@@ -80,12 +80,12 @@ article {
 }
 
 aside {
+  width: 13%;
   min-height: 100%;
   background-color: rgb(64, 64, 64);
 }
 
 .nav {
-  width: 240px;
   min-height: 100%;
 }
 
