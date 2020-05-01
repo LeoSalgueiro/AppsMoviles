@@ -7,9 +7,24 @@ const hideAll = () => {
   });
 };
 
+const fetchData = (games) => {
+  $.get(
+    "http://www.json-generator.com/api/json/get/clqOukMfVK?indent=2",
+    function (data) {
+      games.push(...data);
+    }
+  );
+};
+
+// init
+let games = [];
+fetchData(games);
 hideAll();
 
+// ready
 $(document).ready(function () {
+  console.log(games);
+
   $(".cat-selection").click(function () {
     hideAll();
     // show
