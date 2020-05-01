@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  background-color: #333;
+  color: white;
+  font-family: "Roboto";
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: white;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  flex: 1;
+}
+
+.section {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.items {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 240px;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+  background-color: rgb(191, 191, 191);
+  color: black;
+  border-radius: 20px;
+}
+
+.logo {
+  width: 13%;
+  padding: 2px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 50%;
+}
+
+.title {
+  flex-grow: 7;
+  text-align: center;
+}
+
+aside {
+  width: 13%;
+  min-height: 100%;
+  background-color: rgb(64, 64, 64);
+}
+
+.nav {
+  min-height: 100%;
+}
+
+.content {
+  width: 100%;
+  min-height: 85vh;
+  background-color: rgb(70, 70, 70);
+}
+
+.product-image {
+  padding-top: 1.5rem;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.footer {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+#cat {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+  .content {
+    min-height: 80vh;
+  }
+}

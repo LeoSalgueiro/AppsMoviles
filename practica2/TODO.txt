@@ -1,0 +1,6 @@
+boilerplate OK
+pages encuesta base OK
+jquery OK
+eliminar codigo html repetido OK
+    - borrar paginas por seccion
+    - usar jquery para el nav (show / hide sections)
