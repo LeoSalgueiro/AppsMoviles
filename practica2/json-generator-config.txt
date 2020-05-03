@@ -1,12 +1,12 @@
 [
-  '{{repeat(10)}}',
+  '{{repeat(15)}}',
   {
     id: '{{index()}}',
     title: '{{company()}}',
     picture: function(tags) {
-      return 'https://via.placeholder.com/280x400/000000/FFFFFF/?text=' + this.title;
+      return 'https://via.placeholder.com/280x400/'+ tags.random("1b1b2f", "e43f5a", "162447", "1f4068") + '/FFFFFF/?text=' + this.title;
     },
-    about: '{{lorem(1, "paragraphs")}}',
+    about: '{{lorem(50, "words")}}',
     category: '{{random("action", "adventure", "race")}}',
     released: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
     price: '{{integer(5,50)}}',
@@ -18,4 +18,4 @@
 ]
 
 generated url :
-http://www.json-generator.com/api/json/get/bVJXfwuXKG?indent=2
+http://www.json-generator.com/api/json/get/bGxypiHpbC?indent=2
