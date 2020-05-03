@@ -112,20 +112,17 @@ const buildArticles = (gameList) => {
 };
 
 const fetchData = (url) => {
-  try {
-    $.get(url, function (data) {
-      console.log(data);
-      buildArticles(data);
-    });
-  } catch (error) {
+  $.get(url, function (data) {
+    console.log(data);
+    buildArticles(data);
+  }).fail(function () {
     console.log(
-      "Fetching with local data from data/games.json because of error: ",
-      error
+      "Fetching with local data from data/games.json because of 'GitHubPages non-https' resource error"
     );
     $.getJSON("../data/games.json", function (data) {
       buildArticles(data);
     });
-  }
+  });
 };
 
 // init
