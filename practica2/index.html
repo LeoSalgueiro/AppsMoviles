@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700"
       rel="stylesheet"
     />
     <title>Practica 2 App. Mov.</title>
@@ -28,12 +28,6 @@
           <a><img src="img/logo_22.png" alt="logo" /></a>
         </div>
         <div class="title"><h1>The Games Club</h1></div>
-        <div id="cart">
-          <div>
-            <i class="fas fa-shopping-cart"></i>Total:
-            <span id="cart-total"></span>
-          </div>
-        </div>
       </div>
       <div class="navegacion">
         <nav>
@@ -54,6 +48,10 @@
             </ul>
           </div>
         </nav>
+        <span id="cart">
+          <i class="fas fa-shopping-cart"></i>&NonBreakingSpace; Total: $
+          <span id="cart-total"></span>
+        </span>
       </div>
     </header>
     <main>
@@ -62,29 +60,7 @@
           <section>
             <div class="section" id="action-section">
               <h2>Accion</h2>
-              <div class="items">
-                <article id="123">
-                  <img
-                    class="product-image"
-                    src="img/products/battlefield.jpg"
-                    alt="battlefield"
-                  />
-                  <h4>Battlefield</h4>
-                  <p>
-                    El juego se centra en un hipotético conflicto armado de
-                    finales del siglo XXI, cuando tres facciones se enfrentan:
-                    Estados Unidos, China y la coalición de estados de Medio
-                    Oriente. Por supuesto, cada lado tiene un rico arsenal de
-                    municiones, incluyendo armas pequeñas (rifle M-4, pistola
-                    M-9, etc.)
-                  </p>
-                  <span class="price">Precio: $ 32</span>
-                  <button class="addtocart-btn">Agregar al carrito</button>
-                  <button class="takeout-fromcart-btn">
-                    Quitar del carrito
-                  </button>
-                </article>
-              </div>
+              <div class="items"></div>
             </div>
           </section>
           <section>
@@ -132,8 +108,17 @@
         const gameFound = games.find((x) => x.id === gameId);
         cart.push(gameFound);
 
+        // container change color
+        $(e.target).parent().parent().addClass("selected");
+
         // turn img opac
-        $(e.target).parent().find($("img")).addClass("opacity");
+        $(e.target).parent().parent().find($("img")).addClass("opacity");
+
+        // hide add btn
+        $(e.target).parent().find($(".add-btn")).addClass("hidden");
+
+        // show takeout btn
+        $(e.target).parent().find($(".takeout-btn")).removeClass("hidden");
 
         console.log(cart);
         recalculateTotal();
@@ -145,8 +130,17 @@
           1
         );
 
+        // container change color
+        $(e.target).parent().parent().removeClass("selected");
+
         // remove img opacity
-        $(e.target).parent().find($("img")).removeClass("opacity");
+        $(e.target).parent().parent().find($("img")).removeClass("opacity");
+
+        // show add btn
+        $(e.target).parent().find($(".add-btn")).removeClass("hidden");
+
+        // hide takeout btn
+        $(e.target).parent().find($(".takeout-btn")).addClass("hidden");
 
         console.log(cart);
         recalculateTotal();
@@ -154,6 +148,9 @@
 
       const buildArticles = (gameList) => {
         for (const game of gameList) {
+          const gameInfo = document.createElement("div");
+          const footer = document.createElement("div");
+
           const img = document.createElement("img");
           $(img)
             .addClass("product-image")
@@ -171,18 +168,26 @@
           const takeOutBtn = document.createElement("button");
           $(takeOutBtn)
             .addClass("takeout-btn")
+            .addClass("hidden")
             .html("Quitar del carrito")
             .attr("onclick", `handleTakeOutBtnClick(event, ${game.id})`);
+
+          $(gameInfo)
+            .append(img)
+            .append(`<h4>${game.title} (${game.released.substr(6, 4)})</h4>`)
+            .append(`<p>${game.about}</p>`)
+            .append(`<p>Lanzamiento: <strong>${game.released}</strong></p>`);
+
+          $(footer)
+            .append(`<div class="price"><strong>$ ${game.price}</strong></div>`)
+            .append(addBtn)
+            .append(takeOutBtn);
 
           $(article)
             .attr("id", `article-${game.id}`)
             .addClass("article")
-            .append(img)
-            .append(`<h4>${game.title}</h4>`)
-            .append(`<p>${game.about}</p>`)
-            .append(`<span class="price"">$ ${game.price}</span>`)
-            .append(addBtn)
-            .append(takeOutBtn);
+            .append(gameInfo)
+            .append(footer);
 
           $(`#${game.category}-section .items`).append(article);
           games.push(game);
@@ -197,7 +202,7 @@
       };
       // init
       fetchData(
-        "http://www.json-generator.com/api/json/get/bVJXfwuXKG?indent=2"
+        "http://www.json-generator.com/api/json/get/bGxypiHpbC?indent=2"
       );
       hideAll();
 
