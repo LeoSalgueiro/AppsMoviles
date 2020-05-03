@@ -1,0 +1,152 @@
+[
+  {
+    "category": "race",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Fossiel",
+    "about": "aliquip Lorem reprehenderit ipsum ut cupidatat sunt tempor sit in excepteur occaecat aliquip cillum nisi minim officia deserunt reprehenderit nisi velit non aute minim fugiat laboris Lorem nulla sunt consectetur nulla exercitation veniam deserunt sit non consequat aliquip irure aliqua pariatur occaecat nisi dolor nisi est occaecat esse non voluptate",
+    "title": "Fossiel",
+    "price": 22,
+    "tags": ["enim"],
+    "released": "30-12-2015",
+    "id": 0
+  },
+  {
+    "category": "race",
+    "picture": "https://via.placeholder.com/280x400/1f4068/FFFFFF/?text=Essensia",
+    "about": "dolore eiusmod exercitation ullamco incididunt est nostrud pariatur magna ipsum sunt cillum culpa incididunt quis consectetur sunt ut irure magna magna eu ullamco pariatur anim eu do ea anim dolor culpa exercitation exercitation proident quis ad ex ad velit dolor pariatur esse nisi culpa amet et velit qui sunt esse",
+    "title": "Essensia",
+    "price": 18,
+    "tags": ["velit", "ad"],
+    "released": "25-07-2016",
+    "id": 1
+  },
+  {
+    "category": "adventure",
+    "picture": "https://via.placeholder.com/280x400/1b1b2f/FFFFFF/?text=Phormula",
+    "about": "aliqua sunt anim non culpa anim duis adipisicing laborum duis consectetur sint culpa esse deserunt consectetur Lorem eiusmod incididunt est quis reprehenderit ut adipisicing do adipisicing esse nostrud minim consequat aliquip id fugiat sunt elit laboris labore enim occaecat proident amet culpa aute id sunt mollit ad in nulla labore",
+    "title": "Phormula",
+    "price": 32,
+    "tags": ["est"],
+    "released": "29-11-2019",
+    "id": 2
+  },
+  {
+    "category": "race",
+    "picture": "https://via.placeholder.com/280x400/162447/FFFFFF/?text=Futurity",
+    "about": "cupidatat quis commodo ex aliqua magna irure labore in et est esse ut anim reprehenderit ullamco voluptate incididunt anim ex nostrud ea et nostrud minim consectetur laborum aute proident adipisicing et minim eiusmod Lorem laboris cillum labore consectetur nostrud laborum quis cupidatat sint consectetur tempor id Lorem cillum aliqua ullamco",
+    "title": "Futurity",
+    "price": 44,
+    "tags": ["ut"],
+    "released": "28-10-2016",
+    "id": 3
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Nutralab",
+    "about": "adipisicing dolore aute occaecat quis consectetur eu ea dolor sit amet consequat laborum pariatur fugiat magna in non minim quis ipsum ullamco voluptate magna sint incididunt commodo velit aliquip eu et elit magna voluptate tempor ullamco aliquip ex minim exercitation consectetur ad ullamco fugiat proident reprehenderit velit aute eu quis",
+    "title": "Nutralab",
+    "price": 28,
+    "tags": ["ullamco", "cupidatat"],
+    "released": "30-09-2019",
+    "id": 4
+  },
+  {
+    "category": "adventure",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Biflex",
+    "about": "ullamco reprehenderit qui consectetur est exercitation sit quis amet cillum commodo aute commodo tempor id dolore mollit dolore mollit minim labore pariatur eu dolore anim amet consequat minim tempor enim elit id eiusmod dolor elit esse mollit non ex ipsum sunt mollit cupidatat occaecat mollit ad dolor nulla irure sunt",
+    "title": "Biflex",
+    "price": 8,
+    "tags": ["velit", "laboris", "Lorem"],
+    "released": "22-04-2016",
+    "id": 5
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/162447/FFFFFF/?text=Pulze",
+    "about": "adipisicing cillum aute deserunt cillum duis do dolore eiusmod culpa sunt laborum amet qui magna tempor cillum amet ad ullamco laborum irure excepteur aute officia ex est ex exercitation aliqua dolore qui reprehenderit in ad commodo voluptate Lorem velit non aliqua ex duis eu ea non consequat eiusmod pariatur Lorem",
+    "title": "Pulze",
+    "price": 40,
+    "tags": ["ad"],
+    "released": "15-01-2019",
+    "id": 6
+  },
+  {
+    "category": "adventure",
+    "picture": "https://via.placeholder.com/280x400/1f4068/FFFFFF/?text=Accufarm",
+    "about": "cupidatat officia ullamco sunt pariatur minim labore esse occaecat consequat dolore eiusmod minim qui qui dolor velit in aliqua eu veniam dolor labore labore duis sunt deserunt quis veniam esse amet mollit ut nulla eu dolor incididunt occaecat Lorem quis consectetur ex enim officia ut labore cillum ex voluptate nisi",
+    "title": "Accufarm",
+    "price": 45,
+    "tags": ["adipisicing", "irure"],
+    "released": "03-11-2016",
+    "id": 7
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/1f4068/FFFFFF/?text=Primordia",
+    "about": "esse qui culpa aliquip nulla id exercitation elit ut ipsum ad in anim non ipsum minim proident consequat consequat culpa veniam dolore do dolor veniam consequat culpa commodo laboris tempor consequat ad cupidatat elit do exercitation consequat ex fugiat est velit esse mollit commodo ea enim consectetur ullamco exercitation cillum",
+    "title": "Primordia",
+    "price": 37,
+    "tags": ["cupidatat"],
+    "released": "20-04-2014",
+    "id": 8
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/162447/FFFFFF/?text=Arctiq",
+    "about": "adipisicing eiusmod nostrud minim ut magna incididunt eu magna aliquip est minim ea magna magna occaecat officia magna do commodo labore commodo ex quis aliquip enim consequat ex sunt commodo cupidatat deserunt consequat cupidatat ea elit consequat sit nostrud aute deserunt adipisicing et officia eu excepteur deserunt ut mollit eu",
+    "title": "Arctiq",
+    "price": 50,
+    "tags": ["in"],
+    "released": "07-09-2016",
+    "id": 9
+  },
+  {
+    "category": "race",
+    "picture": "https://via.placeholder.com/280x400/162447/FFFFFF/?text=Geoform",
+    "about": "cupidatat incididunt aute veniam occaecat deserunt occaecat officia culpa culpa nulla nostrud velit nostrud et non duis id reprehenderit duis tempor magna laborum eiusmod officia do commodo nulla officia in laborum id sint nulla occaecat consectetur ut aute incididunt culpa proident enim enim dolor consectetur id consectetur deserunt nisi qui",
+    "title": "Geoform",
+    "price": 31,
+    "tags": ["nulla"],
+    "released": "17-10-2014",
+    "id": 10
+  },
+  {
+    "category": "adventure",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Opticon",
+    "about": "sit incididunt mollit duis do officia pariatur voluptate magna mollit ut ut quis dolor ullamco enim ipsum ea dolore fugiat minim fugiat excepteur do Lorem elit nostrud enim fugiat aliqua tempor nostrud commodo duis magna deserunt elit est in ea qui commodo fugiat nisi Lorem commodo dolor deserunt minim non",
+    "title": "Opticon",
+    "price": 9,
+    "tags": ["nulla", "occaecat"],
+    "released": "14-11-2018",
+    "id": 11
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/1f4068/FFFFFF/?text=Bytrex",
+    "about": "in aute cillum dolore adipisicing ad et anim eu officia excepteur cupidatat veniam deserunt laboris enim sit cillum do occaecat in est in veniam exercitation qui veniam reprehenderit fugiat et ipsum nulla laboris sit irure nostrud culpa esse pariatur in irure ad aute ullamco et consequat consectetur cillum pariatur nostrud",
+    "title": "Bytrex",
+    "price": 23,
+    "tags": ["ex"],
+    "released": "16-09-2016",
+    "id": 12
+  },
+  {
+    "category": "action",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Isodrive",
+    "about": "commodo ut Lorem dolor aliqua eu anim sit irure elit qui exercitation sit proident ut mollit incididunt est minim deserunt Lorem ullamco ipsum tempor adipisicing Lorem consequat veniam exercitation anim non ut excepteur nisi elit deserunt enim nostrud occaecat occaecat anim mollit cupidatat nostrud enim id ea dolore duis laborum",
+    "title": "Isodrive",
+    "price": 29,
+    "tags": ["voluptate", "elit"],
+    "released": "10-03-2014",
+    "id": 13
+  },
+  {
+    "category": "adventure",
+    "picture": "https://via.placeholder.com/280x400/e43f5a/FFFFFF/?text=Exerta",
+    "about": "non consequat excepteur occaecat excepteur et exercitation culpa nulla velit irure laboris eu cupidatat qui qui non duis ut id eu labore enim sunt est incididunt aliquip excepteur enim Lorem sit ex ad velit laboris ipsum culpa officia consequat anim ex proident qui elit consectetur veniam qui ex irure fugiat",
+    "title": "Exerta",
+    "price": 31,
+    "tags": ["qui", "aliqua"],
+    "released": "07-01-2019",
+    "id": 14
+  }
+]
