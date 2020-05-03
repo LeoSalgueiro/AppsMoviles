@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
@@ -22,6 +28,12 @@
           <a><img src="img/logo_22.png" alt="logo" /></a>
         </div>
         <div class="title"><h1>The Games Club</h1></div>
+        <div id="cart">
+          <div>
+            <i class="fas fa-shopping-cart"></i>Total:
+            <span id="cart-total"></span>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -52,7 +64,7 @@
             <div class="section" id="action-section">
               <h2>Accion</h2>
               <div class="items">
-                <article>
+                <article id="123">
                   <img
                     class="product-image"
                     src="img/products/battlefield.jpg"
@@ -67,36 +79,11 @@
                     municiones, incluyendo armas pequeñas (rifle M-4, pistola
                     M-9, etc.)
                   </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/counter.jpg"
-                    alt="counter"
-                  />
-                  <h4>Counter CS: GO</h4>
-                  <p>
-                    Dos equipos, terroristas y fuerzas especiales, se enfrentan
-                    entre sí para impedir que la otra parte logre su objetivo.
-                    Recibimos dinero en efectivo por cada enemigo que matamos,
-                    lo que nos permite comprar mejores armas y equipos al
-                    comienzo de cada ronda.
-                  </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/callofduty.jpg"
-                    alt="callofduty"
-                  />
-                  <h4>Call of Duty</h4>
-                  <p>
-                    Detrás de este tumulto se encuentra un nacionalista ruso
-                    extremo llamado Zakhaev, que está alimentando el terrorismo
-                    global, con el fin de desviar la atención de principales
-                    potencias mundiales de su intento de tomar el poder en su
-                    país.
-                  </p>
+                  <span class="price">Precio: $ 32</span>
+                  <button class="addtocart-btn">Agregar al carrito</button>
+                  <button class="takeout-fromcart-btn">
+                    Quitar del carrito
+                  </button>
                 </article>
               </div>
             </div>
@@ -104,110 +91,13 @@
           <section>
             <div class="section" id="adventure-section">
               <h2>Aventuras</h2>
-              <div class="items">
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/gta_sa.jpg"
-                    alt="gta"
-                  />
-                  <h4>Grand Theft Auto</h4>
-                  <p>
-                    Después de cinco años, Carl regresa a Los Santos, donde
-                    encuentra un submundo criminal leno de asesinatos, drogas y
-                    corrupción. Sin embargo, la desagradable situación en la
-                    ciudad no es el final de las malas noticias; el distrito
-                    donde creció se ve peor que hace cinco años, y su familia se
-                    lamenta por la muerte de la madre de Carl. Además de eso, el
-                    protagonista es acusado de asesinato por policías corruptos.
-                    Bienvenido a California de los 90.
-                  </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/super_mario.jpg"
-                    alt="mario"
-                  />
-                  <h4>Mario Bros</h4>
-                  <p>
-                    Un juego de aventura único con funciones de rol, creado por
-                    Nintendo combinando dos, hasta ahora, franquicias separadas:
-                    Mario y Luigi y Paper Mario. El juego se concentra en
-                    explorar y completar varias misiones, mientras resuelves
-                    acertijos y luchas contra enemigos.
-                  </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/zelda.jpg"
-                    alt="zelda"
-                  />
-                  <h4>Zelda</h4>
-                  <p>
-                    La historia se desarrolla en el reino en ruinas de Hyrule.
-                    Juegas, por supuesto, como el protagonista de la serie,
-                    Link, que tiene que aprender qué sucedió exactamente. Esto
-                    lleva a una aventura aún más grande y emocionante.
-                  </p>
-                </article>
-              </div>
+              <div class="items"></div>
             </div>
           </section>
           <section>
             <div class="section" id="race-section">
               <h2>Carreras</h2>
-              <div class="items">
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/nfs.jpg"
-                    alt="nfs"
-                  />
-                  <h4>Need for Speed: Undergraound 2</h4>
-                  <p>
-                    Todo el juego tiene lugar después del anochecer. Durante la
-                    exploración, los jugadores pueden encontrarse con otros
-                    conductores, que sirven como fuente de información sobre los
-                    eventos relacionados con los entusiastas de las carreras de
-                    alta velocidad. Sin embargo, los jugadores también pueden
-                    desafiar a esos conductores para las carreras que comienzan
-                    en la intersección más cercana.
-                  </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/f1.jpg"
-                    alt="f1"
-                  />
-                  <h4>Formula 1</h4>
-                  <p>
-                    El Campeonato Mundial de Fórmula 1 anual embriaga a una
-                    audiencia mundial de miles de millones, con su cóctel de
-                    velocidad, emoción, glamour y rivalidad. EA SPORTS ™ F1 2002
-                    da vida a este mundo en la experiencia de Fórmula Uno más
-                    avanzada técnicamente y visualmente más impresionante de la
-                    historia.
-                  </p>
-                </article>
-                <article>
-                  <img
-                    class="product-image"
-                    src="img/products/atv.jpg"
-                    alt="atv"
-                  />
-                  <h4>ATV 4</h4>
-                  <p>
-                    ATV Off Road Fury 4 ofrece una variedad de opciones de un
-                    solo jugador y multijugador para carreras, vehículos,
-                    jinetes y equipo con un total de 72 pistas para rasgar.
-                    Comenzando con la acción de un solo jugador, el modo “Story”
-                    comienza con la selección de un jinete y un vehículo.
-                  </p>
-                </article>
-              </div>
+              <div class="items"></div>
             </div>
           </section>
         </div>
@@ -218,6 +108,109 @@
         All rights are not reserved &copy; because we are based on OpenSource
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script>
+      const games = [];
+      const cart = [];
+      var total = 0;
+
+      const recalculateTotal = () => {
+        total = 0;
+        for (const game of cart) {
+          total += game.price;
+        }
+        console.log(total);
+        $("#cart-total").html(total);
+      };
+
+      const hideAll = () => {
+        $(".section").each(function () {
+          $(this).addClass("hidden");
+        });
+      };
+
+      const handleAddBtnClick = (e, gameId) => {
+        console.log("adding to cart: ", gameId);
+        const gameFound = games.find((x) => x.id === gameId);
+        cart.push(gameFound);
+
+        // turn img opac
+        $(e.target).parent().find($("img")).addClass("opacity");
+
+        console.log(cart);
+        recalculateTotal();
+      };
+
+      const handleTakeOutBtnClick = (e, gameId) => {
+        cart.splice(
+          cart.findIndex((x) => x.id === gameId),
+          1
+        );
+
+        // remove img opacity
+        $(e.target).parent().find($("img")).removeClass("opacity");
+
+        console.log(cart);
+        recalculateTotal();
+      };
+
+      const buildArticles = (gameList) => {
+        for (const game of gameList) {
+          const img = document.createElement("img");
+          $(img)
+            .addClass("product-image")
+            .attr("src", game.picture)
+            .attr("alt", game.title);
+
+          const article = document.createElement("article");
+
+          const addBtn = document.createElement("button");
+          $(addBtn)
+            .addClass("add-btn")
+            .html("Agregar al carrito")
+            .attr("onclick", `handleAddBtnClick(event, ${game.id})`);
+
+          const takeOutBtn = document.createElement("button");
+          $(takeOutBtn)
+            .addClass("takeout-btn")
+            .html("Quitar del carrito")
+            .attr("onclick", `handleTakeOutBtnClick(event, ${game.id})`);
+
+          $(article)
+            .attr("id", `article-${game.id}`)
+            .addClass("article")
+            .append(img)
+            .append(`<h4>${game.title}</h4>`)
+            .append(`<p>${game.about}</p>`)
+            .append(`<span class="price"">$ ${game.price}</span>`)
+            .append(addBtn)
+            .append(takeOutBtn);
+
+          $(`#${game.category}-section .items`).append(article);
+          games.push(game);
+        }
+      };
+
+      const fetchData = (url) => {
+        $.get(url, function (data) {
+          console.log(data);
+          buildArticles(data);
+        });
+      };
+      // init
+      fetchData(
+        "http://www.json-generator.com/api/json/get/bVJXfwuXKG?indent=2"
+      );
+      hideAll();
+
+      // ready
+      $(document).ready(function () {
+        $("#cart-total").html(total);
+        $(".cat-selection").click(function () {
+          hideAll();
+          // show
+          $(`#${$(this).attr("id")}-section`).removeClass("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
