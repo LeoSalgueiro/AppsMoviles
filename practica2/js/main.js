@@ -119,7 +119,7 @@ const fetchData = (url) => {
     console.log(
       "Fetching with local data from data/games.json because of 'GitHubPages non-https' resource error"
     );
-    $.getJSON("practica2/data/games.json", function (data) {
+    $.getJSON("../data/games.json", function (data) {
       buildArticles(data);
     });
   });
