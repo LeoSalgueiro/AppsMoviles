@@ -18,6 +18,9 @@ const hideAll = () => {
   $(".section").each(function () {
     $(this).addClass("hidden");
   });
+  $(".cat-selection").each(function () {
+    $(this).removeClass("selected-tab");
+  });
 };
 
 const handleAddBtnClick = (e, gameId) => {
@@ -136,5 +139,6 @@ $(document).ready(function () {
     hideAll();
     // show
     $(`#${$(this).attr("id")}-section`).removeClass("hidden");
+    $(`#${$(this).attr("id")}`).addClass("selected-tab");
   });
 });
