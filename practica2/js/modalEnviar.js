@@ -34,12 +34,14 @@ window.onclick = function(event) {
 
 function enviar(){
 
-    let juego = document.getElementById('gender').children
+    let todoOK = false;
+    //validar que se ingrese un genero
+    let genero = document.getElementById('gender').children
     let opcion = '';
-    for (let index = 0; index < juego.length; index++) {
-        const element = juego[index].selected;
+    for (let index = 0; index < genero.length; index++) {
+        const element = genero[index].selected;
         if(element===true){
-            opcion = juego[index].textContent;
+            opcion = genero[index].textContent;
 
             if(opcion === 'Seleccione su genero'){
                 opcion='No especificado'
@@ -47,6 +49,34 @@ function enviar(){
         }
         
     }
+
+    //validar que se ingrese bien el mail
+/*
+    let email = document.getElementById('email').value
+
+    if(validarEmail(email)){
+        alert("correctamente validado")
+    }
+    else{
+        alert("no se valido")
+    }
+
+    let nombre = document.getElementById('firstname').value
+    if(validarNombre(nombre)){
+        alert("correctamente validado nom")
+    }
+    else{
+        alert("no se valido nom")
+    }
+*/
+    let fecha = document.getElementById('birthdate').value;
+    if(validarFecha(fecha)){
+        alert("correctamente validado fecha")
+    }
+    else{
+        alert("no se valido fecha")
+    }
+
 
 
     let datos = {
@@ -124,4 +154,41 @@ function limpiar(){
 
 function limpiarFormulario() {
     document.getElementById("survey").reset();
+}
+
+//expresiones regulares, validaciones
+
+function validarEmail(email) {
+	if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/.test(email)){
+		return (true)
+	} else {
+		return (false);
+	}
+}
+
+function validarNombre(nombre) {
+    var reg = /^[a-zA-Z]+[a-zA-Z]+$/;
+	if (reg.test(nombre))
+    {
+		return (true)
+	} else {
+		return (false);
+	}
+}
+function validarApellido(apellido) {
+    var reg = /^[a-zA-Z]+[a-zA-Z]+$/;
+	if (reg.test(apellido)){
+		return (true)
+	} else {
+		return (false);
+	}
+}
+
+function validarFecha(fecha) {
+    var reg = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
+	if (reg.test(fecha)){
+		return (true)
+	} else {
+		return (false);
+	}
 }
