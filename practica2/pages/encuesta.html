@@ -4,31 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/survey.css" />
+    
+    <link rel="stylesheet" href="../css/modalEnviar.css" />
+
+    
+
     <title>Encuesta</title>
+
+    <script
+      src="../js/surveyScripts.js"
+      
+    ></script>
+    
   </head>
   <body>
-    <form>
-      <label for="firstname">Nombre:</label><br />
-      <input type="text" id="firstname" name="firstname" /><br />
+    <header><h1>Encuesta de la página</h1></header>
+    <form class="survey" id="survey">
+      <div class="personalInformation">
+        
+        <input type="text" id="firstname" name="firstname" placeholder="Nombre completo"/><br />
 
-      <label for="lastname">Apellido:</label><br />
-      <input type="text" id="lastname" name="lastname" /><br />
+        
+        <input type="text" id="lastname" name="lastname" placeholder="Apellido"/><br />
 
-      <label for="birthdate">Fecha de nacimiento:</label><br />
-      <input type="date" id="birthdate" name="birthdate" /><br />
-
-      <label for="gender">Genero:</label>
-      <div id="gender">
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Masculino</label><br />
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Femenino</label><br />
-        <input type="radio" id="other" name="gender" value="other" />
-        <label for="other">Otro</label>
+        
+        <input type="text" id="birthdate" name="birthdate" placeholder="Fecha de Nacimiento"/><br />
       </div>
-
-      <label for="valoration">Valoracion de la página:</label>
-      <div id="valoration">
+      
+      <div class="gender">
+        <select id="gender">
+          <option id="noSelect" selected="true" disabled="disabled">Seleccione su genero</option>
+          <option value="male">Hombre</option>
+          <option value="female">Mujer</option>
+          <option value="other">Otro</option>
+        </select>
+      </div>
+<br>
+      <label for="valoration">¿Qué te ha parecido la página?</label>
+      <div class="valoration" id="valoration">
         <input
           type="range"
           min="1"
@@ -36,24 +49,76 @@
           value="3"
           class="slider"
           id="myRange"
+          onchange="ocultar(this)"
         />
-        <span id="valoration-1">Lamentable</span>
-        <span id="valoration-2">Mala</span>
-        <span id="valoration-3">Podría ser mejor</span>
-        <span id="valoration-4">Cumple con mis expectativas</span>
-        <span id="valoration-5">Me encantó</span>
+        <br>
+        <span id="valoration-1"  hidden>Lamentable</span>
+        <span id="valoration-2"  hidden>Mala</span>
+        <span id="valoration-3" >Podría ser mejor</span>
+        <span id="valoration-4" hidden >Cumple con mis expectativas</span>
+        <span id="valoration-5" hidden >Me encantó</span>
       </div>
 
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" /><br />
+      <div class="secondaryInformation">
+       
+        <input type="text" id="email" name="email" placeholder="Email"/><br />
 
-      <label for="comment">Comentario:</label><br />
-      <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br />
+        
+        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Comentarios..."></textarea><br />
+      </div>
+      
 
       <br />
-      <input type="button" id="reset-values-btn" value="Restablecer valores" />
-      <input type="button" id="cancel-btn" value="Cancelar" />
-      <input type="submit" id="submit-btn" value="Enviar" />
+      
+
+
+      <div class="buttons">
+        <button class="button button1" type="button" id="myBtn" value="Enviar" onclick="enviar()">Enviar</button>
+        <button class="button button2" type="button" id="cancel-btn" value="Cancelar" onclick="cancelar()">Cancelar</button>
+        <button class="button button3" type="button" id="reset-values-btn" value="Restablecer valores" onclick="limpiarFormulario()">Restablecer valores</button>
+      </div>
+      
     </form>
+
+
+    <!-- The Modals -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal Information survey -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Información de la encuesta</h2>
+        </div>
+        <div class="modal-body">
+          <p class="informationModal" id="informationModal"></p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    
+    </div>
+
+
+    <div id="id01" class="modal2">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close2" title="Close Modal">&times;</span>
+    
+      <form class="modal-content2" action="../index.html">
+        <div class="container">
+          <h2>Cancelar</h2>
+          <p>¿Desea cancelar la encuesta y volver a la pagina anterior?</p>
+    
+          <div class="clearfix botonesextra">
+            <button type="submit" class="aceptarbtn">Sí, deseo volver a la página anterior”</button>
+            <button type="button" class="nobtn" onclick="optionNo()">No</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="../js/modalEnviar.js"></script>
+    
   </body>
+
 </html>

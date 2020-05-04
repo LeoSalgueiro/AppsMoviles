@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    font-family: "Roboto";
+    align-content: center;
+}
+
+h1{
+  text-align: center;
+}
+
+.survey{
+      width: 50%;
+      border-radius: 5px;
+      position: absolute;
+      top: 15%;
+      left: 23%;
+      padding: 20px;
+      border: 1px solid gray;
+      text-align: center;
+
+}
+
+.personalInformation > input{
+    width: 70%;
+    margin-bottom: 20px;
+
+    background-color: rgb(223, 223, 223); 
+    border: none;
+    border-radius: 5px;
+    color: rgb(2, 2, 2);
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.secondaryInformation > textarea, input{
+    width: 70%;
+    margin-bottom: 20px;
+
+    background-color: rgb(223, 223, 223);
+    border: none;
+    border-radius: 5px;
+    color: rgb(2, 2, 2);
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+
+}
+
+.gender > select{
+    width: 77%;
+    margin-bottom: 20px;
+
+    background-color: rgb(223, 223, 223);
+    border: none;
+    border-radius: 5px;
+    color: rgb(2, 2, 2);
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+}
+.valoration{
+  width: 100%;
+}
+  
+.valoration > span{
+    font-size: 14px;
+    justify-content: center;
+  
+}
+
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 16px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button1 {
+    background-color: rgb(156, 156, 156);
+    color: black; 
+    border: 2px solid rgb(49, 119, 50);
+  }
+  
+  .button1:hover {
+    background-color: rgb(49, 119, 50);
+    color: white;
+  }
+
+  .button2 {
+    background-color: rgb(156, 156, 156);
+    color: black; 
+    border: 2px solid rgb(167, 58, 58);
+  }
+  
+  .button2:hover {
+    background-color: rgb(167, 58, 58);
+    color: white;
+  }
+
+  .button3 {
+    background-color: rgb(156, 156, 156);
+    color: black;
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button3:hover {background-color: #e7e7e7;}
+
+  ::placeholder {
+    color: rgb(105, 105, 105);
+    font-size: .8em;
+    font-style: italic;
+  }
+

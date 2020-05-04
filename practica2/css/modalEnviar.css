@@ -1,0 +1,199 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: rgb(214, 214, 214);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.5s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:0; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #2b2b2b;
+  color:rgb(214, 214, 214);
+}
+
+.modal-body {padding: 2px 16px;
+color: rgb(0, 0, 0);}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #2b2b2b;
+  color: rgb(214, 214, 214);
+}
+
+
+
+
+
+
+/*css para cancelar*/
+
+/* {box-sizing: border-box}*/
+
+/* Set a style for all buttons */
+
+button {
+    background-color: rgb(175, 175, 175);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 16px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.aceptarbtn {
+  background-color: rgb(156, 156, 156);
+  color: black; 
+  border: 2px solid rgb(49, 119, 50);
+}
+.aceptarbtn:hover {
+  background-color: rgb(49, 119, 50);
+  color: white;
+  opacity:1;
+}
+.nobtn{
+  background-color: rgb(156, 156, 156);
+  color: black; 
+  border: 2px solid rgb(167, 58, 58);
+}
+.nobtn:hover{
+  background-color: rgb(167, 58, 58);
+  color: white;
+  opacity:1;
+}
+
+
+
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  color: rgb(32, 32, 32);
+  text-align: center;
+}
+
+
+
+
+/* The Modal (background) */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 15%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content2 {
+  position: relative;
+  background-color: rgb(214, 214, 214);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.5s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close2 {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .aceptarbtn, .nobtn {
+    width: 100%;
+  }
+}
