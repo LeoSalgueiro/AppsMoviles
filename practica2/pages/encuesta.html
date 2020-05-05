@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="../css/survey.css" />
     
     <link rel="stylesheet" href="../css/modalEnviar.css" />
@@ -23,12 +31,12 @@
       <div class="personalInformation">
         
         <input type="text" id="firstname" name="firstname" placeholder="Nombre completo"/><br />
-
-        
+             
         <input type="text" id="lastname" name="lastname" placeholder="Apellido"/><br />
 
-        
-        <input type="text" id="birthdate" name="birthdate" placeholder="Fecha de Nacimiento"/><br />
+        <input class="error" type="text" id="birthdate" name="birthdate" placeholder="Fecha de Nacimiento (dd/mm/aaaa)"/>
+        <br />
+      
       </div>
       
       <div class="gender">
@@ -52,19 +60,54 @@
           onchange="ocultar(this)"
         />
         <br>
-        <span id="valoration-1"  hidden>Lamentable</span>
-        <span id="valoration-2"  hidden>Mala</span>
-        <span id="valoration-3" >Podría ser mejor</span>
-        <span id="valoration-4" hidden >Cumple con mis expectativas</span>
-        <span id="valoration-5" hidden >Me encantó</span>
+        
+        <span id="valoration-1"  hidden>
+          <span id="emoji-1">
+            <i class="far fa-sad-cry"></i><br>
+          </span>
+          
+          Lamentable
+        </span>
+        
+        <span id="valoration-2"  hidden>
+          <span id="emoji-2">
+            <i class="far fa-sad-tear"></i><br>
+          </span>
+          
+          Mala
+        </span>
+     
+        <span id="valoration-3" >
+         <span id="emoji-3">
+          <i class="far fa-meh"></i><br>
+         </span>
+          
+        
+           Podría ser mejor
+          </span>
+       
+        <span id="valoration-4" hidden >
+          <span id="emoji-4">
+            <i class="far fa-smile-wink"></i><br>
+          </span>
+          
+          Cumple con mis expectativas
+        </span>
+        
+        <span id="valoration-5" hidden >
+          <span id="emoji-5">
+            <i class="far fa-grin-hearts" ></i><br>
+          </span>
+          
+          Me encantó
+        </span>
       </div>
 
       <div class="secondaryInformation">
        
         <input type="text" id="email" name="email" placeholder="Email"/><br />
 
-        
-        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Comentarios..."></textarea><br />
+        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Comentarios... (opcional)"></textarea><br />
       </div>
       
 

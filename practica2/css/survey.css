@@ -1,3 +1,5 @@
+
+
 body {
     display: flex;
     min-height: 100vh;
@@ -12,7 +14,10 @@ body {
 
 h1{
   text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
 }
+
 
 .survey{
       width: 50%;
@@ -83,12 +88,44 @@ h1{
 }
 .valoration{
   width: 100%;
-}
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
   
+
+}
+.slider{
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 70%; /* Full-width */
+  height: 4px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s
+}
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.slider::-moz-range-thumb {
+  width: 10px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
 .valoration > span{
     font-size: 14px;
     justify-content: center;
-  
+    
 }
 
 
@@ -141,5 +178,34 @@ h1{
     color: rgb(105, 105, 105);
     font-size: .8em;
     font-style: italic;
+  }
+
+ 
+  #emoji-1{
+    font-size: 3em; 
+    color: rgb(253, 38, 0);
+    
+  }
+  #emoji-2{
+    font-size: 3em; 
+ 
+    color: rgb(233, 140, 0);
+    
+   
+  }
+  #emoji-3{
+    font-size: 3em; 
+    color: rgb(255, 174, 0);
+    
+  }
+  #emoji-4{
+    font-size: 3em; 
+    color: rgb(93, 199, 51);
+    
+  }
+  #emoji-5{
+    font-size: 3em; 
+    color: rgb(0, 190, 10);
+    
   }
 
