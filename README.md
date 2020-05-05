@@ -5,7 +5,7 @@
 - **[Montes de Oca, Federico](https://github.com/FedeMDO)**
 - **[Navarro, Leonel](https://github.com/LeoSalgueiro)**
 
-#### Repositorio para trabajar en colaboración y compartir las prácticas de la materia.
+#### [Repositorio](https://github.com/LeoSalgueiro/LeoSalgueiro.github.io) para trabajar en colaboración y compartir las prácticas de la materia.
 
 ## Visualizando las prácticas
 
