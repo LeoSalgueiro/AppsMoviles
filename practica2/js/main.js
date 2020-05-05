@@ -139,6 +139,6 @@ $(document).ready(function () {
     hideAll();
     // show
     $(`#${$(this).attr("id")}-section`).removeClass("hidden");
-    $(`#${$(this).attr("id")}`).addClass("selected-tab");
+    $(this).addClass("selected-tab");
   });
 });
