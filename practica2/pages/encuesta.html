@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="shortcut icon" type="image/png" href="../favicon.png" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -12,42 +12,52 @@
     />
 
     <link rel="stylesheet" href="../css/survey.css" />
-    
-    <link rel="stylesheet" href="../css/modalEnviar.css" />
 
-    
+    <link rel="stylesheet" href="../css/modalEnviar.css" />
 
     <title>Encuesta</title>
 
-    <script
-      src="../js/surveyScripts.js"
-      
-    ></script>
-    
+    <script src="../js/surveyScripts.js"></script>
   </head>
   <body>
     <header><h1>Encuesta de la página</h1></header>
     <form class="survey" id="survey">
       <div class="personalInformation">
-        
-        <input type="text" id="firstname" name="firstname" placeholder="Nombre completo"/><br />
-             
-        <input type="text" id="lastname" name="lastname" placeholder="Apellido"/><br />
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Nombre completo"
+        /><br />
 
-        <input class="error" type="text" id="birthdate" name="birthdate" placeholder="Fecha de Nacimiento (dd/mm/aaaa)"/>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Apellido"
+        /><br />
+
+        <input
+          class="error"
+          type="text"
+          id="birthdate"
+          name="birthdate"
+          placeholder="Fecha de Nacimiento (dd/mm/aaaa)"
+        />
         <br />
-      
       </div>
-      
+
       <div class="gender">
         <select id="gender">
-          <option id="noSelect" selected="true" disabled="disabled">Seleccione su genero</option>
+          <option id="noSelect" selected="true" disabled="disabled"
+            >Seleccione su genero</option
+          >
           <option value="male">Hombre</option>
           <option value="female">Mujer</option>
           <option value="other">Otro</option>
         </select>
       </div>
-<br>
+      <br />
       <label for="valoration">¿Qué te ha parecido la página?</label>
       <div class="valoration" id="valoration">
         <input
@@ -59,74 +69,87 @@
           id="myRange"
           onchange="ocultar(this)"
         />
-        <br>
-        
-        <span id="valoration-1"  hidden>
-          <span id="emoji-1">
-            <i class="far fa-sad-cry"></i><br>
-          </span>
-          
+        <br />
+
+        <span id="valoration-1" hidden>
+          <span id="emoji-1"> <i class="far fa-sad-cry"></i><br /> </span>
+
           Lamentable
         </span>
-        
-        <span id="valoration-2"  hidden>
-          <span id="emoji-2">
-            <i class="far fa-sad-tear"></i><br>
-          </span>
-          
+
+        <span id="valoration-2" hidden>
+          <span id="emoji-2"> <i class="far fa-sad-tear"></i><br /> </span>
+
           Mala
         </span>
-     
-        <span id="valoration-3" >
-         <span id="emoji-3">
-          <i class="far fa-meh"></i><br>
-         </span>
-          
-        
-           Podría ser mejor
-          </span>
-       
-        <span id="valoration-4" hidden >
-          <span id="emoji-4">
-            <i class="far fa-smile-wink"></i><br>
-          </span>
-          
+
+        <span id="valoration-3">
+          <span id="emoji-3"> <i class="far fa-meh"></i><br /> </span>
+
+          Podría ser mejor
+        </span>
+
+        <span id="valoration-4" hidden>
+          <span id="emoji-4"> <i class="far fa-smile-wink"></i><br /> </span>
+
           Cumple con mis expectativas
         </span>
-        
-        <span id="valoration-5" hidden >
-          <span id="emoji-5">
-            <i class="far fa-grin-hearts" ></i><br>
-          </span>
-          
+
+        <span id="valoration-5" hidden>
+          <span id="emoji-5"> <i class="far fa-grin-hearts"></i><br /> </span>
+
           Me encantó
         </span>
       </div>
 
       <div class="secondaryInformation">
-       
-        <input type="text" id="email" name="email" placeholder="Email"/><br />
+        <input type="text" id="email" name="email" placeholder="Email" /><br />
 
-        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Comentarios... (opcional)"></textarea><br />
+        <textarea
+          id="comment"
+          name="comment"
+          rows="4"
+          cols="50"
+          placeholder="Comentarios... (opcional)"
+        ></textarea
+        ><br />
       </div>
-      
 
       <br />
-      
-
 
       <div class="buttons">
-        <button class="button button1" type="button" id="myBtn" value="Enviar" onclick="enviar()">Enviar</button>
-        <button class="button button2" type="button" id="cancel-btn" value="Cancelar" onclick="cancelar()">Cancelar</button>
-        <button class="button button3" type="button" id="reset-values-btn" value="Restablecer valores" onclick="limpiarFormulario()">Restablecer valores</button>
+        <button
+          class="button button1"
+          type="button"
+          id="myBtn"
+          value="Enviar"
+          onclick="enviar()"
+        >
+          Enviar
+        </button>
+        <button
+          class="button button2"
+          type="button"
+          id="cancel-btn"
+          value="Cancelar"
+          onclick="cancelar()"
+        >
+          Cancelar
+        </button>
+        <button
+          class="button button3"
+          type="button"
+          id="reset-values-btn"
+          value="Restablecer valores"
+          onclick="limpiarFormulario()"
+        >
+          Restablecer valores
+        </button>
       </div>
-      
     </form>
-
 
     <!-- The Modals -->
     <div id="myModal" class="modal">
-    
       <!-- Modal Information survey -->
       <div class="modal-content">
         <div class="modal-header">
@@ -136,32 +159,33 @@
         <div class="modal-body">
           <p class="informationModal" id="informationModal"></p>
         </div>
-        <div class="modal-footer">
-        </div>
+        <div class="modal-footer"></div>
       </div>
-    
     </div>
 
-
     <div id="id01" class="modal2">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close2" title="Close Modal">&times;</span>
-    
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        class="close2"
+        title="Close Modal"
+        >&times;</span
+      >
+
       <form class="modal-content2" action="../index.html">
         <div class="container">
           <h2>Cancelar</h2>
           <p>¿Desea cancelar la encuesta y volver a la pagina anterior?</p>
-    
+
           <div class="clearfix botonesextra">
-            <button type="submit" class="aceptarbtn">Sí, deseo volver a la página anterior”</button>
+            <button type="submit" class="aceptarbtn">
+              Sí, deseo volver a la página anterior”
+            </button>
             <button type="button" class="nobtn" onclick="optionNo()">No</button>
           </div>
         </div>
       </form>
     </div>
 
-
     <script src="../js/modalEnviar.js"></script>
-    
   </body>
-
 </html>
