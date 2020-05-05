@@ -21,6 +21,8 @@ Por cada practica y/o ejercicio que por sí mismo necesite un **_index.html_**, 
 - [Practica 1](https://leosalgueiro.github.io/practica1): Engloba, de hecho, los ejercicios 1 y 2 de la práctica 1. Página web realizada en HTML y CSS.
 - [Practica 1_3:](https://leosalgueiro.github.io/practica1_3) Ejercicio 3 de la práctica 1. Página web realizada en HTML y CSS con subcarpeta de recursos .html nombrada **pages**.
 
+- [Practica 2](https://leosalgueiro.github.io/practica2) Practica 2. Pagina web realizada en HTML y CSS, se aplicó sobre ésta JS y JQuery
+
 ## Datos de la materia
 
 Universidad Nacional Arturo Jauretche - Instituto de Ingenieria y Agronomia - Ingenieria Informatica
