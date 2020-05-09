@@ -13,18 +13,16 @@ btn.onclick = function() {
         modal.style.display = "block";
     }
     else{
-        
+        alert("No has validado bien")
+       //"podriamos mostrar alguna alerta con algun error (opcional). expReg ya solucionan esto
     }
     
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-
     modal.style.display = "none";
     limpiar()
-
-
 }
 
 // When the user clicks anywhere outside of the modal, close it
