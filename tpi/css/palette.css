@@ -1,0 +1,59 @@
+/* As hex codes */
+
+.color-primary {
+  color: #1565c0;
+} /* Main Primary color */
+.color-primary-light {
+  color: #5e92f3;
+}
+.color-primary-dark {
+  color: #003c8f;
+}
+
+.color-secondary {
+  color: #8be89f;
+} /* Main Primary color */
+.color-secondary-light {
+  color: #beffd0;
+}
+.color-secondary-dark {
+  color: #59b570;
+}
+
+/*Text on colors*/
+.texton-primary {
+  color: #ffffff;
+}
+
+.texton-secondary {
+  color: #000000;
+}
+
+/*backgrounds*/
+.background-primary {
+  background-color: #1565c0;
+} /* Main Primary color */
+.background-primary-light {
+  background-color: #5e92f3;
+}
+.background-primary-dark {
+  background-color: #003c8f;
+}
+
+.background-secondary {
+  background-color: #8be89f;
+} /* Main Primary color */
+.background-secondary-light {
+  background-color: #beffd0;
+}
+.background-secondary-dark {
+  background-color: #59b570;
+}
+
+.background-paper {
+  background-color: #f5f5f5;
+}
+
+.background-lightgrey {
+  background-color: #f2f2f2;
+}

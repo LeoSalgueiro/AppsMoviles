@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/palette.css" />
+    <link rel="stylesheet" href="../css/grid.css" />
+    <link rel="stylesheet" href="../css/share.css" />
+    <title>Compartir</title>
+  </head>
+  <body>
+    <section id="share" class="container">
+      <h2>Comparte los datos con un amigo</h2>
+      <p>
+        Envia un email a tu amigo con los datos que te parecieron importantes.
+      </p>
+
+      <div class="container background-paper">
+        <form action="#">
+          <div class="row">
+            <div class="col-3">
+              <label for="destinatary">Destinatario <i>(*)</i></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="email"
+                id="destinatary"
+                name="destinatary"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <label for="subject">Sujeto <i>(*)</i></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Sujeto del email.."
+              />
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-3">
+              <label for="country">Country</label>
+            </div>
+            <div class="col-6">
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-3">
+              <label for="message">Mensaje <i>(*)</i></label>
+            </div>
+            <div class="col-6">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Escribe algo.."
+                style="height: 200px;"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <p><i>(*) campos requeridos</i></p>
+          </div>
+          <div class="row">
+            <input class="background-primary" type="submit" value="Enviar" />
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

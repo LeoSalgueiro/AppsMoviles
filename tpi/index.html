@@ -3,38 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./img/favicon.png" />
+    <link rel="shortcut icon" href="./img/favicon.png" />
     <title>Document</title>
     <!--Estilos-->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
-    <link rel="stylesheet" href="css/first-palette.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body class="container background-primary-0">
-    <nav>
-      <div class="nav">
-        <ul class="row">
+  <body class="background-paper">
+    <div id="container">
+      <nav class="row background-primary nav">
+        <ul>
           <span>
-            <a class="col-3" id="init" href="#">inicio</a>
+            <a class="col-3 texton-primary" id="home" href="#">Inicio</a>
           </span>
           <span>
-            <a class="col-3" id="history" href="#">historial</a>
+            <a class="col-3 texton-primary" id="history" href="#"
+              >Historial (borrar)</a
+            >
           </span>
           <span>
-            <a class="col-3" id="other-option" href="#">otra opción</a>
+            <a class="col-3 texton-primary" id="share" href="./pages/share.html"
+              >Compartir (borrar)</a
+            >
           </span>
-          
+          <span>
+            <a
+              class="col-3 texton-primary"
+              id="contact"
+              href="./pages/contact.html"
+              >Contacto</a
+            >
+          </span>
         </ul>
+      </nav>
+      <div class="row">
+        <span class="col-3"></span>
+        <input class="col-6" id="search-bar" type="text" placeholder="Buscar" />
+        <span class="col-3"></span>
       </div>
-      <br>
-      <div class="finder row ">
-          <span class="col-3"></span>
-          <input class="col-6 center" id="searcher" type="text" placeholder="Buscar" >
-          <span class="col-3"></span>
-      </div>
-      
-
-    </nav>
-
+    </div>
   </body>
 </html>
