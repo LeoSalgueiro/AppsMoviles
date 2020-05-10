@@ -1,0 +1,11 @@
+Core:
+https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
+
+https://api.covid19api.com/
+
+Images:
+Wallhaven para fotos
+https://restcountries.eu/ para banderas
+
+Maps:
+https://leafletjs.com/
