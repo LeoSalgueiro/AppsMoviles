@@ -9,3 +9,6 @@ https://restcountries.eu/ para banderas
 
 Maps:
 https://leafletjs.com/
+
+Icons: 
+https://fontawesome.com/icons?m=free
