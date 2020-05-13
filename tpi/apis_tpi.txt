@@ -12,3 +12,6 @@ https://leafletjs.com/
 
 Icons: 
 https://fontawesome.com/icons?m=free
+
+Idea para mostrar datos a lo largo del tiempo:
+https://www.w3schools.com/howto/howto_css_timeline.asp
