@@ -1,22 +1,30 @@
-$("#destinatary").on("change paste keyup", function () {
+$("#share-destinatary").on("change paste keyup", function () {
   if (validateField($(this))) {
-    $("form").attr("action", `mailto:${$(this).val()}`);
+    $("#share-form").attr("action", `mailto:${$(this).val()}`);
   }
   submitBtnEnabled();
 });
 
-$("#subject").on("change paste keyup", function () {
+$("#share-subject").on("change paste keyup", function () {
   validateField($(this));
   submitBtnEnabled();
 });
 
-$("#body").on("change paste keyup", function () {
+$("#share-body").on("change paste keyup", function () {
   validateField($(this));
   submitBtnEnabled();
 });
 
 $(document).ready(function () {
-  $("#submit").attr("disabled", true);
+  $("#share-submit").attr("disabled", true);
+  $("#share-body").focus(function () {
+    $(this).setCursorPosition(
+      `Mira esta informacion sobre COVID19...
+
+    Mensaje: `.length
+    );
+    $(this).scrollTop(0);
+  });
 });
 
 const validateField = (target) => {
@@ -32,12 +40,48 @@ const validateField = (target) => {
 
 const submitBtnEnabled = () => {
   if (
-    $("#destinatary").val().length &&
-    $("#subject").val().length &&
-    $("#body").val().length
+    $("#share-destinatary").val().length &&
+    $("#share-subject").val().length &&
+    $("#share-body").val().length
   ) {
-    $("#submit").removeAttr("disabled");
+    $("#share-submit").removeAttr("disabled");
   } else {
-    $("#submit").attr("disabled", true);
+    $("#share-submit").attr("disabled", true);
   }
+};
+
+const showShareForm = (btn) => {
+  const infoCard = $(btn).parent().parent().parent();
+  infoCard.hide();
+
+  const countryName = infoCard.find(".countryName").attr("id");
+  const NewConfirmed = infoCard.find(".NewConfirmed").find("strong").html();
+  const TotalConfirmed = infoCard.find(".TotalConfirmed").find("strong").html();
+  const NewDeaths = infoCard.find(".NewDeaths").find("strong").html();
+  const TotalDeaths = infoCard.find(".TotalDeaths").find("strong").html();
+  const NewRecovered = infoCard.find(".NewRecovered").find("strong").html();
+  const TotalRecovered = infoCard.find(".TotalRecovered").find("strong").html();
+  const Date = infoCard.find(".Date").html();
+  const message = `Mira esta informacion sobre COVID19...
+
+  Mensaje: 
+  
+
+  PANORAMA EN ${countryName.toUpperCase()}:
+
+    Nuevos confirmados: ${NewConfirmed}
+    Total confirmados: ${TotalConfirmed}
+
+    Nuevas muertes: ${NewDeaths}
+    Total muertes: ${TotalDeaths}
+
+    Nuevos recuperados: ${NewRecovered}
+    Total recuperados: ${TotalRecovered}
+
+  Ultima actualizacion: ${Date}
+  `;
+
+  $("#share").show("slow");
+
+  $("#share-body").val(message);
 };

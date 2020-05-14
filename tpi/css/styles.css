@@ -17,8 +17,25 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.circle-button {
+  width: 100%;
+  height: 1rem;
+  border-radius: 8%;
+  padding-top: 0.5rem;
+  padding-bottom: 2.4rem;
+  border: none;
+  float: right;
+}
+
 /* Rounded border */
 hr.rounded {
   border-top: 8px solid #bbb;
   border-radius: 5px;
+}
+
+.infocard-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
