@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon.png" />
-    <title>Document</title>
+    <title>COVID19 status</title>
     <!--Estilos-->
     <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
@@ -14,7 +14,9 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment-with-locales.min.js"></script>
     <script src="./js/helper.js"></script>
+    <script src="./js/elementBuilders.js"></script>
     <script src="./js/api.wrapper.js"></script>
   </head>
   <body class="background-paper">
@@ -52,58 +54,22 @@
         <span class="col-3"></span>
       </div>
       <main id="main" class="container">
-        <section
-          id="summary"
-          class="row card"
-          style="width: 90%; padding: 1rem;"
-        >
-          <h4>Panorama mundial</h4>
+        <section id="summary" class="card" style="width: 90%; padding: 1rem;">
+          <h3>Panorama mundial</h3>
         </section>
       </main>
     </div>
     <script>
-      const genericBuild = (target, item) => {
-        target
-          .append(
-            `<div class="row"><label for="NewConfirmed" class="col-3">Nuevos confirmados: </label><span name="NewConfirmed" class="col-3">${numberWithCommas(
-              item.NewConfirmed
-            )}</span></div>`
-          )
-          .append(
-            `<div class="row"><label for="TotalConfirmed" class="col-3">Total confirmados: </label><span name="TotalConfirmed" class="col-3">${numberWithCommas(
-              item.TotalConfirmed
-            )}</span></div>`
-          )
-          .append('<hr class"rounded"/>')
-          .append(
-            `<div class="row"><label for="NewDeaths" class="col-3">Nuevas muertes: </label><span name="NewDeaths" class="col-3">${numberWithCommas(
-              item.NewDeaths
-            )}</span></div>`
-          )
-          .append(
-            `<div class="row"><label for="TotalDeaths" class="col-3">Total muertes: </label><span name="TotalDeaths" class="col-3">${numberWithCommas(
-              item.TotalDeaths
-            )}</span></div>`
-          )
-          .append('<hr class"rounded"/>')
-
-          .append(
-            `<div class="row"><label for="NewRecovered" class="col-3">Nuevos recuperados: </label><span name="NewRecovered" class="col-3">${numberWithCommas(
-              item.NewRecovered
-            )}</span></div>`
-          )
-          .append(
-            `<div class="row"><label for="TotalRecovered" class="col-3">Total recuperados: </label><span name="TotalRecovered" class="col-3">${numberWithCommas(
-              item.TotalRecovered
-            )}</span></div>`
-          );
-      };
-
       $(function () {
+        moment.locale("es-AR");
         getSummary.done((data) => {
           console.log(data);
           const summary = $("#summary");
-          genericBuild(summary, data.Global);
+          genericBuild(
+            summary,
+            data.Global,
+            moment(data.Date).startOf("day").fromNow()
+          );
         });
       });
     </script>
