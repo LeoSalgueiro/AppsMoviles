@@ -22,7 +22,7 @@ $(document).ready(function () {
     $(this).setCursorPosition(
       `Mira esta informacion sobre COVID19...
 
-    Mensaje: `.length
+    Mensaje: `.length,
     );
     $(this).scrollTop(0);
   });

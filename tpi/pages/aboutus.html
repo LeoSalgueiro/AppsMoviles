@@ -9,107 +9,109 @@
     <link rel="stylesheet" href="../css/styles.css" />
 
     <!--consumir api de mapas-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-   
-   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin="">
-        
-</script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
 
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
 
     <title>About us</title>
   </head>
   <body class="background-paper">
-    
     <div class="body-about-us">
-        
-            <nav class="row background-primary nav">
-                <ul>
-                    <span>
-                        <a class="col-3 texton-primary" id="home" href="../index.html">Inicio</a>
-                    </span>
-                    <span>
-                        <a class="col-3 texton-primary" id="history" href="#">Historial (borrar)</a>
-                    </span>
-                    <span>
-                        <a class="col-3 texton-primary" id="share" href="./share.html">Compartir (borrar)</a>
-                    </span>
-                    <span>
-                        <a class="col-3 texton-primary" id="contact" href="./aboutus.html">Contacto</a>
-                    </span>
-                </ul>
-            </nav>
-    
-      
+      <nav class="row background-primary nav">
+        <ul>
+          <span>
+            <a class="col-3 texton-primary" id="home" href="../index.html">
+              Inicio
+            </a>
+          </span>
+          <span>
+            <a class="col-3 texton-primary" id="history" href="#">
+              Historial (borrar)
+            </a>
+          </span>
+          <span>
+            <a class="col-3 texton-primary" id="share" href="./share.html">
+              Compartir (borrar)
+            </a>
+          </span>
+          <span>
+            <a class="col-3 texton-primary" id="contact" href="./aboutus.html">
+              Contacto
+            </a>
+          </span>
+        </ul>
+      </nav>
 
-        <div class="row background-lightgrey">
-            <div class="">
-                <h1 class="titleBlock ">
-                    Nuestro objetivo es simple...
-                </h1>
-            </div>
+      <div class="row background-lightgrey">
+        <div class="">
+          <h1 class="titleBlock">
+            Nuestro objetivo es simple...
+          </h1>
         </div>
-        
-        <div class="row">
-            <div class="col-7">
-                <h2>
-                    Resumen:
-                </h2>
-                <p>
-                    En COVID-19 status, nuestro objetivo es simple: creemos que tener la información
-                            actualizada, es necesidad básica para las personas del mundo. 
-                        Tener dicha información y compartirla con el mundo es muy gratifiacante para nosotros.
-                        Que las personas puedan ingresar de manera gratuita y enterarse de la situación actual, creemos que es una forma de prevención. <br> 
-                        Mientras esta situación se mantenga, nosotros estaremos compartiendo con ustedes
-                            la información mas actualizada posible para que sepas que tanto te debes prevenir no solo a tí, sino a los tuyos
-                        <br>
-                        
-                    
-                </p>
-                <p>
-                    El liderazgo de COVID-19 status, se dedica a hacer que el servicio de información
-                            sea más actual y seguro posible. Estamos invirtiendo significativamente en tecnología, personas y
-                            liderazgo para transformar nuestro servicio en bindarles la información mas actual posible.
-                   
-                </p>
-                <h6><em>
-                        COVID-19 status, es una compañía pública, 
-                                ubicada en Calle 14, frente a la plaza Moreno, ciudad de La Plata, Provincia de Buenos Aires
-                        
-                    </em></h6>
-            </div>
-            <div class="col-5">
-                <h2>
-                Ubicación:
-                </h2>
-                <p>
-                    Con sede en: Calle 14, B1900 La Plata, Buenos Aires, Argentina.
-                        
-                </p>
-                <div id="mapid"></div>
-                <h2>
-                    Fundado por:
-                   
-                </h2>
-                <p>
-                    
-                         Federico Montes de Oca (federicomdo97@gmail.com) <br> 
-                            Leonel Navarro (dismoi.leo@gmail.com)
-                    
-                </p>
-                
-                
-            </div>
+      </div>
+
+      <div class="row">
+        <div class="col-7">
+          <h2>
+            Resumen:
+          </h2>
+          <p>
+            En COVID-19 status, nuestro objetivo es simple: creemos que tener la
+            información actualizada, es necesidad básica para las personas del
+            mundo. Tener dicha información y compartirla con el mundo es muy
+            gratifiacante para nosotros. Que las personas puedan ingresar de
+            manera gratuita y enterarse de la situación actual, creemos que es
+            una forma de prevención.
+            <br />
+            Mientras esta situación se mantenga, nosotros estaremos compartiendo
+            con ustedes la información mas actualizada posible para que sepas
+            que tanto te debes prevenir no solo a tí, sino a los tuyos
+            <br />
+          </p>
+          <p>
+            El liderazgo de COVID-19 status, se dedica a hacer que el servicio
+            de información sea más actual y seguro posible. Estamos invirtiendo
+            significativamente en tecnología, personas y liderazgo para
+            transformar nuestro servicio en bindarles la información mas actual
+            posible.
+          </p>
+          <h6>
+            <em>
+              COVID-19 status, es una compañía pública, ubicada en Calle 14,
+              frente a la plaza Moreno, ciudad de La Plata, Provincia de Buenos
+              Aires
+            </em>
+          </h6>
         </div>
+        <div class="col-5">
+          <h2>
+            Ubicación:
+          </h2>
+          <p>
+            Con sede en: Calle 14, B1900 La Plata, Buenos Aires, Argentina.
+          </p>
+          <div id="mapid"></div>
+          <h2>
+            Fundado por:
+          </h2>
+          <p>
+            Federico Montes de Oca (federicomdo97@gmail.com)
+            <br />
+            Leonel Navarro (dismoi.leo@gmail.com)
+          </p>
+        </div>
+      </div>
     </div>
-    
 
     <script src="../js/mapa.js"></script>
-
   </body>
-  
 </html>
- 

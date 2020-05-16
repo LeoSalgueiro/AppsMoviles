@@ -6,7 +6,7 @@ $(function () {
     genericBuild(
       summary,
       data.Global,
-      moment(data.Date).startOf("day").fromNow()
+      moment(data.Date).startOf("day").fromNow(),
     );
   });
 
