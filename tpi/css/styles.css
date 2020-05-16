@@ -52,7 +52,7 @@ hr.rounded {
 }
 
 #search-bar-input {
-  width: 40%;
+  width: 100%;
   height: 40px;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -63,8 +63,13 @@ hr.rounded {
   transition: width 0.2s ease-in-out;
 }
 
+@media (min-width: 1400px) {
+  #search-bar-input {
+    width: 50%;
+  }
+}
+
 .search-btn {
-  margin-left: -45px;
   border-radius: 20px;
   height: 40px;
   min-width: 40px;
@@ -83,4 +88,25 @@ hr.rounded {
 .icon-18 {
   width: 18px;
   height: 18px;
+}
+
+#filter-status,
+#filter-from,
+#filter-to {
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+#filter-status {
+  -webkit-appearance: menulist-button;
+}
+
+.fa-filter {
+  color: red !important;
 }

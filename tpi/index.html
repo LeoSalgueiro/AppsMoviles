@@ -79,23 +79,31 @@
       <main id="main" class="container">
         <section id="search-section" class="container">
           <div class="row search-row">
-            <input
-              id="search-bar-input"
-              type="text"
-              placeholder="Buscar por pais"
-            />
+            <div class="col-4">
+              <input
+                id="search-bar-input"
+                type="text"
+                placeholder="Buscar por pais"
+              />
+            </div>
             <div
               id="search-bar-btn"
-              class="search-btn background-primary-light"
+              class="col search-btn background-primary-light"
             >
               <svg class="icon icon-18">
                 <use xlink:href="#magnify"></use>
               </svg>
             </div>
+            <div
+              class="search-btn col background-secondary"
+              id="search-filter-btn"
+            >
+              <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+            </div>
           </div>
-          <div class="row filter-row">
-            <div class="col-3">
-              <label for="filter-status">Por estado:</label>
+          <div class="row" id="search-filter-row">
+            <div class="col">
+              <label for="filter-status">Status:</label>
               <select id="filter-status" name="status">
                 <option value="all" selected>Todos</option>
                 <option value="confirmed">Casos confirmados</option>
@@ -103,7 +111,7 @@
                 <option value="recovered">Recuperados</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col">
               <label for="filter-from">Desde:</label>
               <input
                 class="datetimepicker"
@@ -113,7 +121,7 @@
                 placeholder="Ingrese una fecha"
               />
             </div>
-            <div class="col-3">
+            <div class="col">
               <label for="filter-to">Hasta:</label>
               <input
                 class="datetimepicker"
@@ -124,10 +132,19 @@
               />
             </div>
           </div>
+
+          <div
+            class="contaner card background-white"
+            id="search-summary"
+            style="width: 82%; padding: 1rem;"
+          >
+            <h3></h3>
+          </div>
+          <div class="container" id="search-results"></div>
         </section>
         <section
           id="summary-section"
-          class="container card"
+          class="container card background-white"
           style="width: 82%; padding: 1rem;"
         >
           <h3>

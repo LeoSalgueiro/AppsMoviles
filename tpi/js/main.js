@@ -1,16 +1,19 @@
+const DATE_ISO_FORMAT = "YYYY-MM-DDThh:mm:00.000[Z]";
+const DATE_FRIENDLY_FORMAT = "YYYY-MM-DD hh:mm";
+
 $(function () {
   jQuery(".datetimepicker").datetimepicker();
+
+  // hide
+  $("#search-summary").hide();
+  $("#search-filter-row").hide();
+
   showOnlyAmongBrothers($("#summary-section"));
   getSummary.done((data) => {
     console.log(data);
-    const summary = $("#summary-section");
-    genericBuild(
-      summary,
-      data.Global,
-      moment(data.Date).startOf("day").fromNow(),
-    );
+    summary = $("#summary-section");
+    genericBuild(summary, data.Global, data.Date);
   });
-
   $(".tab").click(function () {
     const tabIds = ["summary", "search"];
     if (tabIds.includes($(this).attr("id"))) {
@@ -26,7 +29,7 @@ $(function () {
         for (const country of data) {
           for (const attr of getAllAvailableCountriesAttributes) {
             if (country[attr].includes(input)) {
-              alert(JSON.stringify(country));
+              // alert(JSON.stringify(country));
               match = country;
               // first found is the result.
               break;
@@ -44,7 +47,7 @@ $(function () {
           const searchObject = {
             match,
             filters,
-            timestamp: moment().format("YYYY-MM-DDThh:mm:00.000") + "Z",
+            timestamp: moment().format(DATE_ISO_FORMAT),
           };
           console.log(filters);
           getCountryData(
@@ -56,9 +59,35 @@ $(function () {
             ),
           ).done((data) => {
             console.log(data);
+            getSummary.done((summaryData) => {
+              console.log(summaryData);
+              $("#search-summary").empty();
+              $("#search-summary").html("<h3></h3>");
+              genericBuild(
+                $("#search-summary"),
+                summaryData.Countries.find((x) => x.CountryCode === match.ISO2),
+              );
+              $("#search-summary").show("slow");
+              $("#search-summary > h3").html("&nbsp;" + match.Country);
+            });
+            for (const item of data) {
+              // generate results
+            }
           });
         }
       });
+    }
+  });
+
+  $("#search-filter-btn").click(function () {
+    // change color of button
+    $(this).addClass("background-secondary-light");
+    if ($("#search-filter-row").is(":hidden")) {
+      $("#search-filter-row").show("false");
+    } else {
+      // TODO reset filter on hide
+      $("#search-filter-row").hide("slow");
+      $(this).removeClass("background-secondary-light");
     }
   });
 });
@@ -66,13 +95,11 @@ $(function () {
 const getFiltersValues = () => {
   return {
     status: $("#filter-status").find(":selected").val(),
-    from:
-      moment($("#filter-from").val(), "YYYY-MM-DD hh:mm").format(
-        "YYYY-MM-DDThh:mm:00.000",
-      ) + "Z",
-    to:
-      moment($("#filter-to").val(), "YYYY-MM-DD hh:mm").format(
-        "YYYY-MM-DDThh:mm:00.000",
-      ) + "Z",
+    from: moment($("#filter-from").val(), DATE_FRIENDLY_FORMAT).format(
+      DATE_ISO_FORMAT,
+    ),
+    to: moment($("#filter-to").val(), DATE_FRIENDLY_FORMAT).format(
+      DATE_ISO_FORMAT,
+    ),
   };
 };

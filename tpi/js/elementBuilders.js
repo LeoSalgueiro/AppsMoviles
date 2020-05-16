@@ -1,8 +1,10 @@
 const genericBuild = (target, item, date = null) => {
+  date = date ? date : item.Date;
+  date = moment(date).startOf("day").fromNow();
   target
     .append(
       `<div class="countryName" id="${
-        target.country ? target.country : "el mundo"
+        item.Country ? item.Country : "el mundo"
       }" style="display: none;">Total recuperados:</div>`,
     )
     .append(
