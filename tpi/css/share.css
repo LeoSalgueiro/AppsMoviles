@@ -27,10 +27,6 @@
   float: right;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 .error-message {
   color: red;
   margin-top: -0.4rem;

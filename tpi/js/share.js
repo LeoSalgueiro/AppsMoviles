@@ -17,6 +17,7 @@ $("#share-body").on("change paste keyup", function () {
 
 $(document).ready(function () {
   $("#share-submit").attr("disabled", true);
+  $(".error-message").hide();
   $("#share-body").focus(function () {
     $(this).setCursorPosition(
       `Mira esta informacion sobre COVID19...
@@ -30,9 +31,9 @@ $(document).ready(function () {
 const validateField = (target) => {
   let passes = false;
   if (target.val().length < 1) {
-    target.parent().find(".error-message").removeClass("hidden");
+    target.parent().find(".error-message").show();
   } else {
-    target.parent().find(".error-message").addClass("hidden");
+    target.parent().find(".error-message").hide();
     passes = true;
   }
   return passes;
@@ -51,9 +52,8 @@ const submitBtnEnabled = () => {
 };
 
 const showShareForm = (btn) => {
+  showOnlyAmongBrothers($("#share-section"));
   const infoCard = $(btn).parent().parent().parent();
-  infoCard.hide();
-
   const countryName = infoCard.find(".countryName").attr("id");
   const NewConfirmed = infoCard.find(".NewConfirmed").find("strong").html();
   const TotalConfirmed = infoCard.find(".TotalConfirmed").find("strong").html();
@@ -80,8 +80,6 @@ const showShareForm = (btn) => {
 
   Ultima actualizacion: ${Date}
   `;
-
-  $("#share").show("slow");
 
   $("#share-body").val(message);
 };

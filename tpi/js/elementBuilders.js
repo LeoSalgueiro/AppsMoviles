@@ -40,7 +40,7 @@ const genericBuild = (target, item, date = null) => {
       <div class="col-6"><p style="font-size:medium">Ultima actualización: <span class="Date">${date}</span></p></div>
       <div class="col-3"></div>
       <div class="col-3">
-        <button class="circle-button background-secondary" onclick="showShareForm(this)">
+        <button class="circle-button background-secondary-light" onclick="showShareForm(this)">
           <span style="font-size: 2rem; line-height: 0;">
             <i id="share-icon" class="fas fa-share-alt"></i>
           </span>
