@@ -2,11 +2,11 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-const showOnlyAmongBrothers = (target) => {
+const showOnlyAmongBrothers = (target, inVelocity = "slow") => {
   $($(target).prop("tagName")).each((idx, el) => {
     $(el).hide();
   });
-  $(target).show();
+  $(target).show(inVelocity);
 };
 
 //SET CURSOR POSITION

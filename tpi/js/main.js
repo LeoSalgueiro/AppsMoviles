@@ -10,6 +10,13 @@ $(function () {
     );
   });
 
+  $(".tab").click(function () {
+    const tabIds = ["summary", "search"];
+    if (tabIds.includes($(this).attr("id"))) {
+      showOnlyAmongBrothers($(`#${$(this).attr("id")}-section`));
+    }
+  });
+
   $("#search-bar-btn").click(function () {
     const input = $("#search-bar-input").val();
     if (input.length) {
