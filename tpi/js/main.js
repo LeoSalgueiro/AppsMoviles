@@ -1,6 +1,3 @@
-const DATE_ISO_FORMAT = "YYYY-MM-DDThh:mm:00.000[Z]";
-const DATE_FRIENDLY_FORMAT = "YYYY-MM-DD hh:mm";
-
 $(function () {
   jQuery(".datetimepicker").datetimepicker();
 
@@ -91,15 +88,3 @@ $(function () {
     }
   });
 });
-
-const getFiltersValues = () => {
-  return {
-    status: $("#filter-status").find(":selected").val(),
-    from: moment($("#filter-from").val(), DATE_FRIENDLY_FORMAT).format(
-      DATE_ISO_FORMAT,
-    ),
-    to: moment($("#filter-to").val(), DATE_FRIENDLY_FORMAT).format(
-      DATE_ISO_FORMAT,
-    ),
-  };
-};

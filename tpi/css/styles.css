@@ -63,12 +63,6 @@ hr.rounded {
   transition: width 0.2s ease-in-out;
 }
 
-@media (min-width: 1400px) {
-  #search-bar-input {
-    width: 50%;
-  }
-}
-
 .search-btn {
   border-radius: 20px;
   height: 40px;
@@ -105,8 +99,4 @@ hr.rounded {
 
 #filter-status {
   -webkit-appearance: menulist-button;
-}
-
-.fa-filter {
-  color: red !important;
 }
