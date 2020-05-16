@@ -10,6 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <title>COVID19 status</title>
     <!--Estilos-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+    />
     <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -37,6 +41,7 @@
     <script src="./js/api.wrapper.js"></script>
     <script>
       moment.locale("es-AR");
+      jQuery.datetimepicker.setLocale("es");
     </script>
     <script src="./js/main.js"></script>
   </head>
@@ -86,6 +91,37 @@
               <svg class="icon icon-18">
                 <use xlink:href="#magnify"></use>
               </svg>
+            </div>
+          </div>
+          <div class="row filter-row">
+            <div class="col-3">
+              <label for="filter-status">Por estado:</label>
+              <select id="filter-status" name="status">
+                <option value="all" selected>Todos</option>
+                <option value="confirmed">Casos confirmados</option>
+                <option value="deaths">Muertes</option>
+                <option value="recovered">Recuperados</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="filter-from">Desde:</label>
+              <input
+                class="datetimepicker"
+                type="text"
+                id="filter-from"
+                name="from"
+                placeholder="Ingrese una fecha"
+              />
+            </div>
+            <div class="col-3">
+              <label for="filter-to">Hasta:</label>
+              <input
+                class="datetimepicker"
+                type="text"
+                id="filter-to"
+                name="to"
+                placeholder="Ingrese una fecha"
+              />
             </div>
           </div>
         </section>
