@@ -45,8 +45,8 @@
     </script>
     <script src="./js/main.js"></script>
   </head>
-  <body class="background-paper">
-    <div id="container">
+  <body class="background-paper bg">
+    <header>
       <nav class="row background-primary nav">
         <ul>
           <span>
@@ -70,165 +70,171 @@
           </span>
         </ul>
       </nav>
+    </header>
+    <main id="main" class="container">
       <div class="row">
         <span class="col-3"></span>
-        <h1 class="col-6" style="text-align: center;">COVID 19 Status</h1>
+        <h1
+          class="col-6"
+          style="text-align: center; background-color: whitesmoke;"
+        >
+          COVID 19 Status
+        </h1>
         <span class="col-3"></span>
       </div>
-
-      <main id="main" class="container">
-        <section id="search-section" class="container">
-          <div class="row search-row">
-            <div class="col-4">
-              <input
-                id="search-bar-input"
-                type="text"
-                placeholder="Buscar por pais"
-              />
-            </div>
-            <div
-              id="search-bar-btn"
-              class="col search-btn background-primary-light"
-            >
-              <svg class="icon icon-18">
-                <use xlink:href="#magnify"></use>
-              </svg>
-            </div>
-            <div
-              class="search-btn col background-secondary"
-              id="search-filter-btn"
-            >
-              <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="row" id="search-filter-row">
-            <div class="col">
-              <label for="filter-status">Status:</label>
-              <select id="filter-status" name="status">
-                <option value="all" selected>Todos</option>
-                <option value="confirmed">Casos confirmados</option>
-                <option value="deaths">Muertes</option>
-                <option value="recovered">Recuperados</option>
-              </select>
-            </div>
-            <div class="col">
-              <label for="filter-from">Desde:</label>
-              <input
-                class="datetimepicker"
-                type="text"
-                id="filter-from"
-                name="from"
-                placeholder="Ingrese una fecha"
-              />
-            </div>
-            <div class="col">
-              <label for="filter-to">Hasta:</label>
-              <input
-                class="datetimepicker"
-                type="text"
-                id="filter-to"
-                name="to"
-                placeholder="Ingrese una fecha"
-              />
-            </div>
-          </div>
-
-          <div
-            class="contaner card background-white"
-            id="search-summary"
-            style="width: 82%; padding: 1rem;"
-          >
-            <h3></h3>
-          </div>
-          <div class="container" id="search-results"></div>
-        </section>
-        <section
-          id="summary-section"
-          class="container card background-white"
-          style="width: 82%; padding: 1rem;"
-        >
-          <h3>
-            &NonBreakingSpace;
-            <i class="fas fa-globe-americas fa-2x"></i>
-            &NonBreakingSpace; Panorama mundial
-          </h3>
-        </section>
-      </main>
-    </div>
-    <!-- hide -->
-    <section id="share-section" class="container share-container">
-      <h2>Comparte los datos con un amigo</h2>
-      <p>
-        Envia un email a tu amigo con los datos que te parecieron importantes.
-      </p>
-
-      <div class="container background-paper">
-        <form action="#" id="share-form">
-          <div class="row">
-            <div class="col-3">
-              <label class="share-label" for="destinatary">
-                Destinatario
-                <i>(*)</i>
-              </label>
-            </div>
-            <div class="col-6">
-              <input
-                type="email"
-                id="share-destinatary"
-                name="destinatary"
-                placeholder="Email"
-              />
-              <p class="error-message hidden">Campo requerido</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="share-label" for="subject">
-                Sujeto
-                <i>(*)</i>
-              </label>
-            </div>
-            <div class="col-6">
-              <input
-                type="text"
-                id="share-subject"
-                name="subject"
-                placeholder="Sujeto del email.."
-              />
-              <p class="error-message hidden">Campo requerido</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="share-label" for="body">
-                Mensaje
-                <i>(*)</i>
-              </label>
-            </div>
-            <div class="col-6">
-              <textarea
-                id="share-body"
-                name="body"
-                placeholder="Escribe algo.."
-                style="min-height: 200px; max-height: 500px;"
-              ></textarea>
-              <p class="error-message hidden">Campo requerido</p>
-            </div>
-          </div>
-          <div class="row">
-            <p><i>(*) campos requeridos</i></p>
-          </div>
-          <div class="row">
+      <section id="search-section" class="container">
+        <div class="row search-row">
+          <div class="col-4">
             <input
-              class="background-primary button"
-              type="submit"
-              id="share-submit"
-              value="Enviar"
+              id="search-bar-input"
+              type="text"
+              placeholder="Buscar por pais"
             />
           </div>
-        </form>
-      </div>
-    </section>
+          <div
+            id="search-bar-btn"
+            class="col search-btn background-primary-light"
+          >
+            <svg class="icon icon-18">
+              <use xlink:href="#magnify"></use>
+            </svg>
+          </div>
+          <div
+            class="search-btn col background-secondary"
+            id="search-filter-btn"
+          >
+            <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="row" id="search-filter-row">
+          <div class="col">
+            <label for="filter-status">Status:</label>
+            <select id="filter-status" name="status">
+              <option value="all" selected>Todos</option>
+              <option value="confirmed">Casos confirmados</option>
+              <option value="deaths">Muertes</option>
+              <option value="recovered">Recuperados</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="filter-from">Desde:</label>
+            <input
+              class="datetimepicker"
+              type="text"
+              id="filter-from"
+              name="from"
+              placeholder="Ingrese una fecha"
+            />
+          </div>
+          <div class="col">
+            <label for="filter-to">Hasta:</label>
+            <input
+              class="datetimepicker"
+              type="text"
+              id="filter-to"
+              name="to"
+              placeholder="Ingrese una fecha"
+            />
+          </div>
+        </div>
+
+        <div
+          class="contaner card background-white"
+          id="search-summary"
+          style="width: 82%; padding: 1rem;"
+        >
+          <h3></h3>
+        </div>
+        <div class="container" id="search-results"></div>
+      </section>
+      <section
+        id="summary-section"
+        class="container card background-white"
+        style="width: 82%; padding: 1rem;"
+      >
+        <h3>
+          &NonBreakingSpace;
+          <i class="fas fa-globe-americas fa-2x"></i>
+          &NonBreakingSpace; Panorama mundial
+        </h3>
+      </section>
+      <!-- hide -->
+
+      <section id="share-section" class="container share-container">
+        <h2>Comparte los datos con un amigo</h2>
+        <p>
+          Envia un email a tu amigo con los datos que te parecieron importantes.
+        </p>
+
+        <div class="container background-paper">
+          <form action="#" id="share-form">
+            <div class="row">
+              <div class="col-3">
+                <label class="share-label" for="destinatary">
+                  Destinatario
+                  <i>(*)</i>
+                </label>
+              </div>
+              <div class="col-6">
+                <input
+                  type="email"
+                  id="share-destinatary"
+                  name="destinatary"
+                  placeholder="Email"
+                />
+                <p class="error-message hidden">Campo requerido</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label class="share-label" for="subject">
+                  Sujeto
+                  <i>(*)</i>
+                </label>
+              </div>
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="share-subject"
+                  name="subject"
+                  placeholder="Sujeto del email.."
+                />
+                <p class="error-message hidden">Campo requerido</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label class="share-label" for="body">
+                  Mensaje
+                  <i>(*)</i>
+                </label>
+              </div>
+              <div class="col-6">
+                <textarea
+                  id="share-body"
+                  name="body"
+                  placeholder="Escribe algo.."
+                  style="min-height: 200px; max-height: 500px;"
+                ></textarea>
+                <p class="error-message hidden">Campo requerido</p>
+              </div>
+            </div>
+            <div class="row">
+              <p><i>(*) campos requeridos</i></p>
+            </div>
+            <div class="row">
+              <input
+                class="background-primary button"
+                type="submit"
+                id="share-submit"
+                value="Enviar"
+              />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
     <script src="js/share.js"></script>
   </body>
 </html>

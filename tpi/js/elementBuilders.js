@@ -5,7 +5,7 @@ const genericBuild = (target, item, date = null) => {
     .append(
       `<div class="countryName" id="${
         item.Country ? item.Country : "el mundo"
-      }" style="display: none;">Total recuperados:</div>`,
+      }" style="display: none;"></div>`,
     )
     .append(
       `<div class="row"><label for="NewConfirmed" class="col-5">Nuevos confirmados: </label><span name="NewConfirmed" class="col-3 NewConfirmed">
