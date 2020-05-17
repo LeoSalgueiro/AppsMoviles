@@ -1,5 +1,8 @@
 $(function () {
-  jQuery(".datetimepicker").datetimepicker();
+  jQuery(".datetimepicker").datetimepicker({
+    timepicker: false,
+    format: "d/m/Y",
+  });
 
   // hide
   $("#search-summary").hide();

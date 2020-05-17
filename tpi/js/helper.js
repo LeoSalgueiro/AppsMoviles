@@ -1,5 +1,5 @@
 const DATE_ISO_FORMAT = "YYYY-MM-DDThh:mm:00.000[Z]";
-const DATE_FRIENDLY_FORMAT = "YYYY-MM-DD hh:mm";
+const DATE_FRIENDLY_FORMAT = "DD-MM-YYYY";
 const chartOptions = (options = {
   scales: {
     yAxes: [
