@@ -7,12 +7,15 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <link rel="shortcut icon" href="./img/favicon.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <title>COVID19 status</title>
     <!--Estilos-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
     />
     <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
@@ -34,8 +37,10 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script src="./js/helper.js"></script>
     <script src="./js/elementBuilders.js"></script>
     <script src="./js/api.wrapper.js"></script>
@@ -74,11 +79,10 @@
     <main id="main" class="container">
       <div class="row">
         <span class="col-3"></span>
-        <h1
-          class="col-6"
-          style="text-align: center; background-color: whitesmoke;"
-        >
-          COVID 19 Status
+        <h1 class="col-6">
+          <strong style="text-align: center; color: white;">
+            COVID 19 Status
+          </strong>
         </h1>
         <span class="col-3"></span>
       </div>
@@ -139,13 +143,19 @@
         </div>
 
         <div
-          class="contaner card background-white"
+          class="container card background-white"
           id="search-summary"
           style="width: 82%; padding: 1rem;"
         >
           <h3></h3>
         </div>
-        <div class="container" id="search-results"></div>
+        <div
+          class="container card background-white"
+          style="width: 82%; margin-top: 1rem;"
+        >
+          <div class="row" id="search-result-chart"></div>
+          <!-- para recargar datos, borramos el canvas de su parent, creamos un nuevo canvas y lanzamos la funcion que genera el chart -->
+        </div>
       </section>
       <section
         id="summary-section"
@@ -234,7 +244,6 @@
         </div>
       </section>
     </main>
-
     <script src="js/share.js"></script>
   </body>
 </html>

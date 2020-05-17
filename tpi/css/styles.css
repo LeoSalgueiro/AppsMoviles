@@ -100,3 +100,9 @@ hr.rounded {
 #filter-status {
   -webkit-appearance: menulist-button;
 }
+
+section {
+  background-color: whitesmoke;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

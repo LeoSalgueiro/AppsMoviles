@@ -66,6 +66,8 @@ $(function () {
               );
               $("#search-summary").show("slow");
               $("#search-summary > h3").html("&nbsp;" + match.Country);
+              const chartData = chartDataGeneratorAllStatus(data);
+              resetChartCanvas(chartData);
             });
             for (const item of data) {
               // generate results
