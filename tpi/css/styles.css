@@ -102,6 +102,7 @@ hr.rounded {
   border-radius: 20px;
   -webkit-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
+  box-shadow: 1px 3px 4px #ccc;
 }
 
 .search-btn {
