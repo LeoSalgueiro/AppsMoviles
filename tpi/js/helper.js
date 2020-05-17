@@ -12,6 +12,12 @@ const chartOptions = (options = {
   },
 });
 
+const fixedFields = {
+  fill: false, // const
+  lineTension: 0.1, // const
+  borderWidth: 2, // const
+};
+
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
@@ -51,41 +57,7 @@ const getFiltersValues = () => {
   };
 };
 
-const exampleWithStatus = {
-  Country: "Argentina",
-  CountryCode: "AR",
-  Province: "",
-  City: "",
-  CityCode: "",
-  Lat: "-38.42",
-  Lon: "-63.62",
-  Cases: 0,
-  Status: "confirmed",
-  Date: "2020-01-23T00:00:00Z",
-};
-
-const example = {
-  Country: "Argentina",
-  CountryCode: "AR",
-  Province: "",
-  City: "",
-  CityCode: "",
-  Lat: "-38.42",
-  Lon: "-63.62",
-  Confirmed: 0,
-  Deaths: 0,
-  Recovered: 0,
-  Active: 0,
-  Date: "2020-01-22T00:00:00Z",
-};
-
 const chartDataGeneratorAllStatus = (countryDataArray) => {
-  const fixedFields = {
-    fill: false, // const
-    lineTension: 0.1, // const
-    borderWidth: 2, // const
-  };
-
   const labels = countryDataArray.map((x) => {
     return moment(x.Date).format("DD-MM-YYYY");
   });
@@ -123,6 +95,41 @@ const chartDataGeneratorAllStatus = (countryDataArray) => {
     data: {
       labels,
       datasets: [confirmed, deaths, recovered],
+    },
+    options: chartOptions,
+  };
+};
+
+const chartDataGenerator = (countryDataArray, status) => {
+  if (status === "all") {
+    return chartDataGeneratorAllStatus(countryDataArray);
+  }
+
+  const labels = countryDataArray.map((x) => {
+    return moment(x.Date).format("DD-MM-YYYY");
+  });
+
+  const statusData = {
+    borderColor:
+      status === "confirmed" ? "green" : status === "deaths" ? "red" : "orange",
+    label:
+      status === "confirmed"
+        ? "Casos confirmados"
+        : status === "deaths"
+        ? "Muertes"
+        : "Recuperados",
+    data: countryDataArray.map((x) => {
+      return x.Cases;
+    }),
+    ...fixedFields,
+  };
+
+  return {
+    type: "line", // const
+    responsive: true, // const
+    data: {
+      labels,
+      datasets: [statusData],
     },
     options: chartOptions,
   };
