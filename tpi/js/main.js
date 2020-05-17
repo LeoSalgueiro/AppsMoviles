@@ -7,6 +7,7 @@ $(function () {
   // hide
   $("#search-summary").hide();
   $("#search-filter-row").hide();
+  $("#search-history-container").hide();
 
   showOnlyAmongBrothers($("#summary-section"));
   getSummary.done((data) => {
@@ -15,8 +16,10 @@ $(function () {
     genericBuild(summary, data.Global, data.Date);
   });
   $(".tab").click(function () {
-    const tabIds = ["summary", "search"];
+    $(".tab").removeClass("activeTab");
+    const tabIds = ["summary", "search", "aboutus"];
     if (tabIds.includes($(this).attr("id"))) {
+      $(this).addClass("activeTab");
       showOnlyAmongBrothers($(`#${$(this).attr("id")}-section`));
     }
   });
@@ -61,20 +64,37 @@ $(function () {
             console.log(data);
             getSummary.done((summaryData) => {
               console.log(summaryData);
-              $("#search-summary").empty();
-              $("#search-summary").html("<h3></h3>");
-              genericBuild(
-                $("#search-summary"),
-                summaryData.Countries.find((x) => x.CountryCode === match.ISO2),
+              const item = summaryData.Countries.find(
+                (x) => x.CountryCode === match.ISO2,
               );
+
+              // assign country flag to item
+
+              $("#search-summary").empty();
+              $("#search-summary").html(`<h3></h3>`);
+
+              genericBuild($("#search-summary"), item);
+              console.log(item);
+              getCountryImages(item.CountryCode, function (countryImages) {
+                $(".bg").css(
+                  "background-image",
+                  `linear-gradient(
+                    to bottom,
+                    #050505,
+                    transparent,
+                    transparent
+                  ),url("${countryImages.image}")`,
+                );
+                $("#search-summary > h3").html(
+                  `<img src="${countryImages.flag}" alt="country" style="width: 32px" />` +
+                    "&nbsp;" +
+                    match.Country,
+                );
+              });
               $("#search-summary").show("slow");
-              $("#search-summary > h3").html("&nbsp;" + match.Country);
-              const chartData = chartDataGenerator(data, filters.status);
-              resetChartCanvas(chartData);
+
+              resetChartCanvas(chartDataGenerator(data, filters.status));
             });
-            for (const item of data) {
-              // generate results
-            }
           });
         }
       });
@@ -82,14 +102,46 @@ $(function () {
   });
 
   $("#search-filter-btn").click(function () {
-    // change color of button
-    $(this).addClass("background-secondary-light");
+    if (!$("#search-history-container").is(":hidden")) {
+      $("#search-history-btn").click();
+    }
     if ($("#search-filter-row").is(":hidden")) {
+      $(this)
+        .removeClass("background-secondary-dark")
+        .addClass("background-lightgrey2")
+        .addClass("darkslategrey")
+        .addClass("union");
       $("#search-filter-row").show("false");
     } else {
       // TODO reset filter on hide
       $("#search-filter-row").hide("slow");
-      $(this).removeClass("background-secondary-light");
+      $(this)
+        .addClass("background-secondary-dark")
+        .removeClass("background-lightgrey2")
+        .removeClass("darkslategrey")
+        .removeClass("union");
+    }
+  });
+
+  $("#search-history-btn").click(function () {
+    if (!$("#search-filter-row").is(":hidden")) {
+      $("#search-filter-btn").click();
+    }
+    if ($("#search-history-container").is(":hidden")) {
+      $(this)
+        .removeClass("background-secondary-dark")
+        .addClass("background-lightgrey2")
+        .addClass("darkslategrey")
+        .addClass("union");
+      $("#search-history-container").show("false");
+    } else {
+      // TODO reset filter on hide
+      $("#search-history-container").hide("slow");
+      $(this)
+        .addClass("background-secondary-dark")
+        .removeClass("background-lightgrey2")
+        .removeClass("darkslategrey")
+        .removeClass("union");
     }
   });
 });

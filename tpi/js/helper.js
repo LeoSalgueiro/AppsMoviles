@@ -26,7 +26,7 @@ const showOnlyAmongBrothers = (target, inVelocity = "slow") => {
   $($(target).prop("tagName")).each((idx, el) => {
     $(el).hide();
   });
-  $(target).show(inVelocity);
+  $(target).fadeIn(inVelocity);
 };
 
 //SET CURSOR POSITION
@@ -48,12 +48,16 @@ $.fn.setCursorPosition = function (pos) {
 const getFiltersValues = () => {
   return {
     status: $("#filter-status").find(":selected").val(),
-    from: moment($("#filter-from").val(), DATE_FRIENDLY_FORMAT).format(
-      DATE_ISO_FORMAT,
-    ),
-    to: moment($("#filter-to").val(), DATE_FRIENDLY_FORMAT).format(
-      DATE_ISO_FORMAT,
-    ),
+    from: $("#filter-from").val().length
+      ? moment($("#filter-from").val(), DATE_FRIENDLY_FORMAT).format(
+          DATE_ISO_FORMAT,
+        )
+      : undefined,
+    to: $("#filter-to").val().length
+      ? moment($("#filter-to").val(), DATE_FRIENDLY_FORMAT).format(
+          DATE_ISO_FORMAT,
+        )
+      : undefined,
   };
 };
 

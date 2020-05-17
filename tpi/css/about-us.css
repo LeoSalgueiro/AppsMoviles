@@ -1,15 +1,13 @@
-
-.titleBlock{
-    margin-left: 5%;
-    margin-right: 5%;
+.body-about-us {
+  vertical-align: inherit;
+  text-align: justify;
 }
-
-.body-about-us{
-    
-    vertical-align: inherit;
+@media screen and (max-width: 500px) {
+  .body-about-us {
     text-align: left;
+  }
 }
 
-#mapid { height: 340px; }
-
-
+#mapid {
+  height: 340px;
+}

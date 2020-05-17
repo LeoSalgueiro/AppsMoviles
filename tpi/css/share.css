@@ -3,17 +3,6 @@
   padding: 20px;
 }
 
-.bg {
-  background-image: url("https://i.pinimg.com/originals/93/e3/97/93e3971ac2d293b8270fd045a3b78b99.jpg");
-  /* Full height */
-  height: 100%;
-  /* Center and scale the image nicely */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 #share-destinatary,
 #share-subject,
 #share-body {

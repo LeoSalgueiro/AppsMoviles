@@ -2,13 +2,54 @@
  Remember: MOBILE FIRST
 */
 
-.nav {
-  margin: -1rem 0;
+.bg {
+  background-image: linear-gradient(
+      to bottom,
+      #050505,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    ),
+    url("https://i.pinimg.com/originals/93/e3/97/93e3971ac2d293b8270fd045a3b78b99.jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+
+.nav a {
+  float: left;
+  padding: 12px;
+  color: white !important;
+  margin: 0 !important;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.nav a:hover {
+  background-color: #003c8f;
+}
+
+.activeTab {
+  background-color: #003c8f;
+}
+
+@media screen and (max-width: 500px) {
+  .navcontainer {
+    width: 100%;
+  }
+  .nav a {
+    display: block;
+  }
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
   width: 40%;
   border-radius: 5px;
 }
@@ -69,7 +110,6 @@ hr.rounded {
   min-width: 40px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   justify-content: center;
   cursor: pointer;
   transition: all 1s ease;
@@ -101,8 +141,50 @@ hr.rounded {
   -webkit-appearance: menulist-button;
 }
 
+#search-filter-row {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.union {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
 section {
-  background-color: whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.93);
   padding: 1rem;
   margin-bottom: 1rem;
+  min-height: 40vh;
+  transition: all 1s ease;
+}
+
+.pagetitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+#search-history-container {
+  width: 100%;
+  min-height: 49vh;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: x-large;
+}
+
+#search-history-items {
+  width: 90%;
+}
+
+#search-history-items article {
+  width: 100%;
+  margin-bottom: 0.5rem;
 }

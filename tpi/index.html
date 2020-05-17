@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/about-us.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/share.css" />
     <!-- Svg -->
@@ -41,9 +42,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <!--consumir api de mapas-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script srt="./js/iso-helper.js"></script>
     <script src="./js/helper.js"></script>
     <script src="./js/elementBuilders.js"></script>
     <script src="./js/api.wrapper.js"></script>
+    <script src="./js/consumerOfImages.js"></script>
     <script>
       moment.locale("es-AR");
       jQuery.datetimepicker.setLocale("es");
@@ -51,41 +67,30 @@
     <script src="./js/main.js"></script>
   </head>
   <body class="background-paper bg">
-    <header>
-      <nav class="row background-primary nav">
-        <ul>
-          <span>
-            <a class="col-3 texton-primary tab" id="summary" href="#">
-              Novedades
-            </a>
-          </span>
-          <span>
-            <a class="col-3 texton-primary tab" id="search" href="#">
-              Busqueda
-            </a>
-          </span>
-          <span>
-            <a
-              class="col-3 texton-primary tab"
-              id="contact"
-              href="./pages/aboutus.html"
-            >
-              Acerca del proyecto
-            </a>
-          </span>
-        </ul>
-      </nav>
+    <header class="background-primary">
+      <div class="container navcontainer">
+        <nav class="row nav">
+          <a class="col-3 texton-secondary tab white" id="summary" href="#">
+            <i class="fas fa-newspaper"></i>
+            Novedades
+          </a>
+          <a class="col-3 texton-secondary tab white" id="search" href="#">
+            <i class="fa fa-fw fa-search"></i>
+            Busqueda
+          </a>
+          <a class="col-3 texton-secondary tab white" id="aboutus" href="#">
+            <i class="fas fa-map-marker-alt"></i>
+            Acerca del proyecto
+          </a>
+        </nav>
+      </div>
     </header>
     <main id="main" class="container">
-      <div class="row">
-        <span class="col-3"></span>
-        <h1 class="col-6">
-          <strong style="text-align: center; color: white;">
-            COVID 19 Status
-          </strong>
-        </h1>
-        <span class="col-3"></span>
-      </div>
+      <h1 class="pagetitle">
+        <strong class="texton-primary">
+          COVID 19 Status
+        </strong>
+      </h1>
       <section id="search-section" class="container">
         <div class="row search-row">
           <div class="col-4">
@@ -97,20 +102,28 @@
           </div>
           <div
             id="search-bar-btn"
-            class="col search-btn background-primary-light"
+            class="col search-btn background-primary"
+            style="margin-left: -1rem;"
           >
             <svg class="icon icon-18">
               <use xlink:href="#magnify"></use>
             </svg>
           </div>
           <div
-            class="search-btn col background-secondary"
+            class="search-btn col background-secondary-dark white"
             id="search-filter-btn"
           >
             <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
           </div>
+          &NonBreakingSpace;
+          <div
+            class="search-btn col background-secondary-dark white"
+            id="search-history-btn"
+          >
+            <i class="fas fa-history fa-lg"></i>
+          </div>
         </div>
-        <div class="row" id="search-filter-row">
+        <div class="row background-lightgrey2" id="search-filter-row">
           <div class="col">
             <label for="filter-status">Status:</label>
             <select id="filter-status" name="status">
@@ -141,7 +154,27 @@
             />
           </div>
         </div>
-
+        <div
+          class="container background-lightgrey2"
+          id="search-history-container"
+        >
+          <div class="row">
+            <div class="col">
+              <span class="subtitle">Historial de busquedas</span>
+            </div>
+          </div>
+          <div class="container" id="search-history-items">
+            <article
+              id="search-history-noresults-message"
+              class="row card background-paper"
+            >
+              No se encontraron resultados
+            </article>
+            <article class="row card background-paper">
+              asdasdasddddddddddddddddda
+            </article>
+          </div>
+        </div>
         <div
           class="container card background-white"
           id="search-summary"
@@ -157,11 +190,7 @@
           <!-- para recargar datos, borramos el canvas de su parent, creamos un nuevo canvas y lanzamos la funcion que genera el chart -->
         </div>
       </section>
-      <section
-        id="summary-section"
-        class="container card background-white"
-        style="width: 82%; padding: 1rem;"
-      >
+      <section id="summary-section" class="container" style="padding: 1rem;">
         <h3>
           &NonBreakingSpace;
           <i class="fas fa-globe-americas fa-2x"></i>
@@ -176,7 +205,7 @@
           Envia un email a tu amigo con los datos que te parecieron importantes.
         </p>
 
-        <div class="container background-paper">
+        <div class="container">
           <form action="#" id="share-form">
             <div class="row">
               <div class="col-3">
@@ -243,7 +272,68 @@
           </form>
         </div>
       </section>
+      <section id="aboutus-section" class="container">
+        <div class="row">
+          <h1 class="titleBlock">
+            Nuestro objetivo es simple...
+          </h1>
+        </div>
+
+        <div class="row">
+          <div class="col-7">
+            <h2>
+              Resumen:
+            </h2>
+            <p>
+              En COVID-19 status, nuestro objetivo es simple: creemos que tener
+              la información actualizada, es necesidad básica para las personas
+              del mundo. Tener dicha información y compartirla con el mundo es
+              muy gratifiacante para nosotros. Que las personas puedan ingresar
+              de manera gratuita y enterarse de la situación actual, creemos que
+              es una forma de prevención.
+              <br />
+              Mientras esta situación se mantenga, nosotros estaremos
+              compartiendo con ustedes la información mas actualizada posible
+              para que sepas que tanto te debes prevenir no solo a tí, sino a
+              los tuyos
+              <br />
+            </p>
+            <p>
+              El liderazgo de COVID-19 status, se dedica a hacer que el servicio
+              de información sea más actual y seguro posible. Estamos
+              invirtiendo significativamente en tecnología, personas y liderazgo
+              para transformar nuestro servicio en bindarles la información mas
+              actual posible.
+            </p>
+            <h6>
+              <em>
+                COVID-19 status, es una compañía pública, ubicada en Calle 14,
+                frente a la plaza Moreno, ciudad de La Plata, Provincia de
+                Buenos Aires
+              </em>
+            </h6>
+          </div>
+          <div class="col-5">
+            <h2>
+              Ubicación:
+            </h2>
+            <p>
+              Con sede en: Calle 14, B1900 La Plata, Buenos Aires, Argentina.
+            </p>
+            <div id="mapid" class="background-paper"></div>
+            <h2>
+              Fundado por:
+            </h2>
+            <p>
+              Federico Montes de Oca (federicomdo97@gmail.com)
+              <br />
+              Leonel Navarro (dismoi.leo@gmail.com)
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="js/share.js"></script>
+    <script src="js/mapa.js"></script>
   </body>
 </html>

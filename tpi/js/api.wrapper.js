@@ -24,8 +24,12 @@ const buildGetCountryDataUrl = (
   from = undefined,
   to = undefined,
 ) => {
+  let dayOne = "";
+  if (from === undefined || to === undefined) {
+    dayOne = "dayone/";
+  }
   // build url
-  let build = `${baseUrl}/country/${countrySlug}`;
+  let build = `${baseUrl}${dayOne}country/${countrySlug}`;
   if (status != "all") {
     build += `/status/${status}`;
   }
@@ -35,6 +39,7 @@ const buildGetCountryDataUrl = (
   if (to) {
     build += from ? `&to=${to}` : `?to=${to}`;
   }
+  console.log(build);
   return build;
 };
 
