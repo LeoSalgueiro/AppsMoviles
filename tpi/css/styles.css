@@ -24,7 +24,8 @@
 
 .nav a {
   float: left;
-  padding: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   color: white !important;
   margin: 0 !important;
   text-decoration: none;
@@ -47,6 +48,7 @@
     width: 100%;
   }
   .nav a {
+    width: 100%;
     display: block;
   }
 }
