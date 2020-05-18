@@ -55,8 +55,8 @@
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
-    <script srt="./js/iso-helper.js"></script>
     <script src="./js/helper.js"></script>
+    <script src="./js/history-storage.js"></script>
     <script src="./js/elementBuilders.js"></script>
     <script src="./js/api.wrapper.js"></script>
     <script src="./js/consumerOfImages.js"></script>
@@ -70,11 +70,11 @@
     <header class="background-primary">
       <div class="container navcontainer">
         <nav class="row nav">
-          <a class="col-3 texton-secondary tab white" id="summary" href="#">
+          <a class="col-2 texton-secondary tab white" id="summary" href="#">
             <i class="fas fa-newspaper"></i>
             Novedades
           </a>
-          <a class="col-3 texton-secondary tab white" id="search" href="#">
+          <a class="col-2 texton-secondary tab white" id="search" href="#">
             <i class="fa fa-fw fa-search"></i>
             Busqueda
           </a>
@@ -162,18 +162,16 @@
             <div class="col">
               <span class="subtitle">Historial de busquedas</span>
             </div>
+            <div class="col" style="float: right;">
+              <div
+                id="search-history-clean-btn"
+                class="search-btn background-red texton-primary"
+              >
+                <i class="far fa-trash-alt fa-lg"></i>
+              </div>
+            </div>
           </div>
-          <div class="container" id="search-history-items">
-            <article
-              id="search-history-noresults-message"
-              class="row card background-paper"
-            >
-              No se encontraron resultados
-            </article>
-            <article class="row card background-paper">
-              asdasdasddddddddddddddddda
-            </article>
-          </div>
+          <div class="container" id="search-history-items"></div>
         </div>
         <div
           class="container card background-white"
@@ -279,7 +277,7 @@
           </h1>
         </div>
 
-        <div class="row">
+        <div class="row body-about-us">
           <div class="col-7">
             <h2>
               Resumen:
@@ -300,10 +298,11 @@
             </p>
             <p>
               El liderazgo de COVID-19 status, se dedica a hacer que el servicio
-              de información sea más actual y seguro posible. Estamos
-              invirtiendo significativamente en tecnología, personas y liderazgo
-              para transformar nuestro servicio en bindarles la información mas
-              actual posible.
+              de información sea más actual y seguro posible.
+              <br />
+              Estamos invirtiendo significativamente en tecnología, personas y
+              liderazgo para transformar nuestro servicio en bindarles la
+              información mas actual posible.
             </p>
             <h6>
               <em>

@@ -2,11 +2,11 @@
   vertical-align: inherit;
   text-align: justify;
 }
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   .body-about-us {
     text-align: left;
   }
-}
+} */
 
 #mapid {
   height: 340px;

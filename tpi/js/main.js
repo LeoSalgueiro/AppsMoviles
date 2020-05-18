@@ -3,7 +3,7 @@ $(function () {
     timepicker: false,
     format: "d/m/Y",
   });
-
+  showHistory();
   // hide
   $("#search-summary").hide();
   $("#search-filter-row").hide();
@@ -28,34 +28,44 @@ $(function () {
     const input = $("#search-bar-input").val();
     if (input.length) {
       getAllAvailableCountries.done((data) => {
-        let match = null;
+        let match = [];
         for (const country of data) {
           for (const attr of getAllAvailableCountriesAttributes) {
-            if (country[attr].includes(input)) {
-              // alert(JSON.stringify(country));
-              match = country;
-              // first found is the result.
+            if (
+              country[attr]
+                .toLocaleLowerCase()
+                .includes(input.toLocaleLowerCase())
+            ) {
+              match.push(country);
               break;
             }
           }
         }
-        if (!match) {
+        if (match.length === 0) {
           // TODO meterlo en un div
           alert("No se encontraron resultados para: " + input);
         } else {
           // trigger request to fetch country data with filters
           const filters = getFiltersValues();
-
+          match = match.sort((a, b) => {
+            return a.Country.length - b.Country.length;
+          });
+          console.table(match);
+          const betterChoice = match.shift();
+          console.log("Better ", betterChoice);
           // TODO save on localstorage with filters
           const searchObject = {
-            match,
+            match: betterChoice,
             filters,
-            timestamp: moment().format(DATE_ISO_FORMAT),
+            timestamp: Date.now().toString(),
           };
+          pushObjectToHistory(searchObject);
+          showHistory();
+
           console.log(filters);
           getCountryData(
             buildGetCountryDataUrl(
-              match.Slug,
+              betterChoice.Slug,
               filters.status,
               filters.from,
               filters.to,
@@ -65,7 +75,7 @@ $(function () {
             getSummary.done((summaryData) => {
               console.log(summaryData);
               const item = summaryData.Countries.find(
-                (x) => x.CountryCode === match.ISO2,
+                (x) => x.CountryCode === betterChoice.ISO2,
               );
 
               // assign country flag to item
@@ -88,7 +98,7 @@ $(function () {
                 $("#search-summary > h3").html(
                   `<img src="${countryImages.flag}" alt="country" style="width: 32px" />` +
                     "&nbsp;" +
-                    match.Country,
+                    betterChoice.Country,
                 );
               });
               $("#search-summary").show("slow");
@@ -99,6 +109,10 @@ $(function () {
         }
       });
     }
+  });
+
+  $("#search-history-clean-btn").click(function () {
+    cleanHistory();
   });
 
   $("#search-filter-btn").click(function () {
@@ -124,6 +138,7 @@ $(function () {
   });
 
   $("#search-history-btn").click(function () {
+    showHistory();
     if (!$("#search-filter-row").is(":hidden")) {
       $("#search-filter-btn").click();
     }

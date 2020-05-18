@@ -148,3 +148,24 @@ const resetChartCanvas = (data) => {
   var ctx = document.getElementById("chart").getContext("2d");
   myLineChart = new Chart(ctx, data);
 };
+
+const searchFromHistory = (historyIndex) => {
+  //11/05/2020
+  const historyObject = getHistory()[historyIndex];
+  console.log("found ", historyObject);
+  $("#search-bar-input").val(historyObject.match.Country);
+  $("#filter-status").val(historyObject.filters.status).change();
+
+  if (historyObject.filters.from) {
+    $("#filter-from").val(
+      moment(historyObject.filters.from).format(DATE_FRIENDLY_FORMAT),
+    );
+  }
+  if (historyObject.filters.to) {
+    $("#filter-to").val(
+      moment(historyObject.filters.to).format(DATE_FRIENDLY_FORMAT),
+    );
+  }
+
+  $("#search-bar-btn").click();
+};

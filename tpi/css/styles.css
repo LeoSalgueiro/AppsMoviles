@@ -34,6 +34,10 @@
   background-color: #003c8f;
 }
 
+.tab {
+  text-align: center;
+}
+
 .activeTab {
   background-color: #003c8f;
 }
@@ -156,6 +160,7 @@ hr.rounded {
 
 section {
   border-radius: 10px;
+  width: 100%;
   background-color: rgba(245, 245, 245, 0.93);
   padding: 1rem;
   margin-bottom: 1rem;
@@ -183,9 +188,16 @@ section {
 
 #search-history-items {
   width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #search-history-items article {
   width: 100%;
   margin-bottom: 0.5rem;
+}
+
+.hoverable:hover {
+  background-color: silver;
+  cursor: pointer;
 }

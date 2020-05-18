@@ -50,3 +50,69 @@ const genericBuild = (target, item, date = null) => {
       </div>
     </div>`);
 };
+
+const buildHistoryCard = (target, historyObject, index) => {
+  console.log("timestamp", historyObject.timestamp);
+  const timestamp = moment(historyObject.timestamp, "unix").fromNow();
+  const status =
+    historyObject.filters.status === "all"
+      ? "Todos"
+      : historyObject.filters.status === "confirmed"
+      ? "Confirmados"
+      : historyObject.filters.status === "deaths"
+      ? "Muertos"
+      : historyObject.filters.status === "recovered"
+      ? "Recuperados"
+      : "";
+
+  const spanStatus = `
+  <div class="col">
+  <span id="${index}-status"><strong>Status:</strong>  ${status}</span>
+  </div>`;
+
+  const spanFrom = historyObject.filters.from
+    ? `
+    <div class="col">
+      <span id="${index}-from"><strong>Desde:</strong>  ${moment(
+        historyObject.filters.from,
+      ).format(DATE_FRIENDLY_FORMAT)}
+      </span>
+    </div>`
+    : "";
+
+  const spanTo = historyObject.filters.to
+    ? `
+    <div class="col">
+      <span id="${index}-to"><strong>Hasta:</strong> ${moment(
+        historyObject.filters.to,
+      ).format(DATE_FRIENDLY_FORMAT)}
+      </span>
+    </div>`
+    : "";
+
+  target.append(`
+  <article class="row card background-paper hoverable" id="search-history-art-${index}" onclick="searchFromHistory(${index})">
+    <div class="container">
+      <div class="row">
+        <span class="col"><strong>Pais buscado:</strong> ${historyObject.match.Country}</span>&nbsp;
+      </div>
+      <div class="row">
+        ${spanStatus}
+        ${spanFrom}
+        ${spanTo}
+      </div>
+      <div class="row">
+        <span class="grey" style="float:right">${timestamp}</span>
+      </div>
+    </div>
+  </article>
+  `);
+};
+
+const buildEmptyHistory = (target) => {
+  target.append(`
+  <article class="row card background-paper">
+    <span>No se encontraron resultados</span>
+  </article>
+  `);
+};

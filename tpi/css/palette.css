@@ -66,10 +66,18 @@
   background-color: white;
 }
 
+.background-red {
+  background-color: red;
+}
+
 .white {
   color: whitesmoke;
 }
 
 .darkslategrey {
   color: darkslategrey;
+}
+
+.grey {
+  color: grey;
 }
