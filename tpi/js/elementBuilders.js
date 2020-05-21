@@ -131,7 +131,9 @@ const buildSearchResultItem = (target, countryName) => {
         res.flag
       }" alt="country" style="width: 32px" /></span>
       <span class="col font-heavy">${countryName.Country}</span>
-      <span class="col font-light">(pob. ${nFormatter(res.population)})</span>
+      <span class="col font-light hidden-sm">(pob. ${nFormatter(
+        res.population,
+      )})</span>
     </article>
     `);
     })
