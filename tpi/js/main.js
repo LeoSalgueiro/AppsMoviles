@@ -36,6 +36,7 @@ $(function () {
                 .toLocaleLowerCase()
                 .includes(input.toLocaleLowerCase())
             ) {
+              
               match.push(country);
               break;
             }

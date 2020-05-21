@@ -176,7 +176,8 @@ const searchFromHistory = (historyIndex) => {
 };
 
 const listCountriesOnSearch = (match) => {
-  $("#search-list-countries").html("");
+  //$("#search-list-countries").html("");//con este no limpias el contenido, solo cambias una parte por vacio
+  $("#search-list-countries").empty();//esto elimina todo el contenido de ese id y los childrens
 
   // hide filter and historial
   if (!$("#search-filter-row").is(":hidden")) {
@@ -191,9 +192,32 @@ const listCountriesOnSearch = (match) => {
   $("#search-summary").hide();
   $("#chart-container").hide();
 
-  for (const country of match) {
-    buildSearchResultItem($("#search-list-countries"), country);
+  //for display matchs
+
+if(match.length > 10){
+
+  for (let i= 0; i < match.length; i++) {
+    const country = match[i];
+    
+    if(i >= 10){
+      //no hago nada porque estaran oocultos los mayores a 10
+      //buildSearchResultItem2($("#search-list-countries"), country);
+    }else{
+      buildSearchResultItem($("#search-list-countries"), country);
+    }
   }
+  seeMore($('#watch-more'), match)
+  
+}
+
+else{
+  for (const country of match) {
+
+    buildSearchResultItem($("#search-list-countries"), country);
+
+  }
+}
+
 };
 
 const presentCountryData = (Country, Slug, ISO2) => {

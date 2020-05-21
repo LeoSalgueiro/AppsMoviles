@@ -117,10 +117,36 @@ const buildEmptyHistory = (target) => {
   `);
 };
 
-const buildSearchResultItem = (target, countryName) => {
+const seeMore = (target, match) =>{ 
+  $('#watch-more').empty();//limpio el boton por si se busca de nuevo sobre lo mismo (sinoo duplica el boton)
+  target.append('<a><i class="far fa-arrow-alt-circle-down"></i></a>')
+  
+  $('#watch-more').click(function(){
+    
+ 
+    for (let i= 0; i < match.length; i++) {
+      const countryName = match[i];
+      if(i>=10){
+        
+        buildSearchResultItem2($("#search-list-countries"), countryName);
+      }
+      
+      //$(`#search-list-country-${countryName.Country}_${countryName.Slug}_${countryName.ISO2}`).css({'display':'true'})
+    }
+    $('#watch-more').empty();
+    var posicion = $("#watch-more").offset().top;
+    $("html, body").animate({
+      scrollTop: posicion
+  }, 1500);
+  });
+  
+    
+}
+const buildSearchResultItem2 = (target, countryName) => {
   getCountryFlag(countryName.ISO2)
     .done(function (res) {
-      target.append(`
+      
+      target.append(` 
     <article id="search-list-country-${
       countryName.Country
     }_${countryName.Slug}_${countryName.ISO2}" 
@@ -135,6 +161,40 @@ const buildSearchResultItem = (target, countryName) => {
         res.population,
       )})</span>
     </article>
+    
+    `);
+    })
+    .fail(function () {
+      target.append(`
+    <article id="search-list-country-${countryName.Country}_${countryName.Slug}_${countryName.ISO2}" 
+        class="row card background-white hoverable country-item" onclick="presentCountryData('${countryName.Country}', '${countryName.Slug}', '${countryName.ISO2}')">
+      <span class="col font-heavy">${countryName.Country}</span>
+    </article>
+    `);
+    });
+};
+
+
+const buildSearchResultItem = (target, countryName) => {
+  getCountryFlag(countryName.ISO2)
+    .done(function (res) {
+      
+      target.append(` 
+    <article id="search-list-country-${
+      countryName.Country
+    }_${countryName.Slug}_${countryName.ISO2}" 
+        class="row card background-white hoverable country-item" onclick="presentCountryData('${
+          countryName.Country
+        }', '${countryName.Slug}', '${countryName.ISO2}')">
+      <span class="col"><img src="${
+        res.flag
+      }" alt="country" style="width: 32px" /></span>
+      <span class="col font-heavy">${countryName.Country}</span>
+      <span class="col font-light hidden-sm">(pob. ${nFormatter(
+        res.population,
+      )})</span>
+    </article>
+    
     `);
     })
     .fail(function () {
