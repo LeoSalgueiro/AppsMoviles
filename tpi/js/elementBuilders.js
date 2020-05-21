@@ -121,10 +121,17 @@ const buildSearchResultItem = (target, countryName) => {
   getCountryFlag(countryName.ISO2)
     .done(function (res) {
       target.append(`
-    <article id="search-list-country-${countryName.Country}_${countryName.Slug}_${countryName.ISO2}" 
-        class="row card background-white hoverable country-item" onclick="presentCountryData('${countryName.Country}', '${countryName.Slug}', '${countryName.ISO2}')">
-      <span class="col"><img src="${res.flag}" alt="country" style="width: 32px" /></span>
-      <span class="col">${countryName.Country}</span>
+    <article id="search-list-country-${
+      countryName.Country
+    }_${countryName.Slug}_${countryName.ISO2}" 
+        class="row card background-white hoverable country-item" onclick="presentCountryData('${
+          countryName.Country
+        }', '${countryName.Slug}', '${countryName.ISO2}')">
+      <span class="col"><img src="${
+        res.flag
+      }" alt="country" style="width: 32px" /></span>
+      <span class="col font-heavy">${countryName.Country}</span>
+      <span class="col font-light">(pob. ${nFormatter(res.population)})</span>
     </article>
     `);
     })
@@ -132,7 +139,7 @@ const buildSearchResultItem = (target, countryName) => {
       target.append(`
     <article id="search-list-country-${countryName.Country}_${countryName.Slug}_${countryName.ISO2}" 
         class="row card background-white hoverable country-item" onclick="presentCountryData('${countryName.Country}', '${countryName.Slug}', '${countryName.ISO2}')">
-      <span class="col">${countryName.Country}</span>
+      <span class="col font-heavy">${countryName.Country}</span>
     </article>
     `);
     });
