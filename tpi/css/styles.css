@@ -265,3 +265,14 @@ section {
   background-color: silver;
   cursor: pointer;
 }
+
+#search-list-countries {
+  width: 82%;
+  margin-left: 1rem;
+}
+
+.country-item {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

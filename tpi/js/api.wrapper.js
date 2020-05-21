@@ -16,7 +16,7 @@ const getAllAvailableCountries = $.ajax({
   timeout: 0,
 });
 
-const getAllAvailableCountriesAttributes = ["Country", "Slug", "ISO2"];
+const getAllAvailableCountriesAttributes = ["Country", "Slug"];
 
 const buildGetCountryDataUrl = (
   countrySlug,

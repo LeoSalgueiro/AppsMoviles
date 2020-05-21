@@ -55,3 +55,11 @@ const getImagen = (capital) => {
     dataType: "json",
   });
 };
+
+const getCountryFlag = (iso2) => {
+  return $.ajax({
+    url: `${countryForCode}` + iso2,
+    method: "GET",
+    timeout: 0,
+  });
+};

@@ -64,7 +64,6 @@
       moment.locale("es-AR");
       jQuery.datetimepicker.setLocale("es");
     </script>
-    <script src="./js/main.js"></script>
   </head>
   <body class="background-paper bg">
     <header class="background-primary">
@@ -173,6 +172,9 @@
           </div>
           <div class="container" id="search-history-items"></div>
         </div>
+        <div>
+          <div id="search-list-countries"></div>
+        </div>
         <div
           class="container card background-white"
           id="search-summary"
@@ -181,11 +183,11 @@
           <h3></h3>
         </div>
         <div
+          id="chart-container"
           class="container card background-white"
           style="width: 82%; margin-top: 1rem;"
         >
           <div class="row" id="search-result-chart"></div>
-          <!-- para recargar datos, borramos el canvas de su parent, creamos un nuevo canvas y lanzamos la funcion que genera el chart -->
         </div>
       </section>
       <section id="summary-section" class="container" style="padding: 1rem;">
@@ -334,5 +336,6 @@
     </main>
     <script src="js/share.js"></script>
     <script src="js/mapa.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

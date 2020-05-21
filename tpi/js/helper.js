@@ -153,7 +153,7 @@ const searchFromHistory = (historyIndex) => {
   //11/05/2020
   const historyObject = getHistory()[historyIndex];
   console.log("found ", historyObject);
-  $("#search-bar-input").val(historyObject.match.Country);
+  // $("#search-bar-input").val(historyObject.match.Country);
   $("#filter-status").val(historyObject.filters.status).change();
 
   if (historyObject.filters.from) {
@@ -167,5 +167,105 @@ const searchFromHistory = (historyIndex) => {
     );
   }
 
-  $("#search-bar-btn").click();
+  // $("#search-bar-btn").click();
+  presentCountryData(
+    historyObject.match.Country,
+    historyObject.match.Slug,
+    historyObject.match.ISO2,
+  );
+};
+
+const listCountriesOnSearch = (match) => {
+  $("#search-list-countries").html("");
+
+  // hide filter and historial
+  if (!$("#search-filter-row").is(":hidden")) {
+    $("#search-filter-btn").click();
+  }
+
+  if (!$("#search-history-container").is(":hidden")) {
+    $("#search-history-btn").click();
+  }
+
+  // hide summary and chart
+  $("#search-summary").hide();
+  $("#chart-container").hide();
+
+  for (const country of match) {
+    buildSearchResultItem($("#search-list-countries"), country);
+  }
+};
+
+const presentCountryData = (Country, Slug, ISO2) => {
+  // clean results
+  $("#search-list-countries").html("");
+
+  // show
+  $("#search-summary").show();
+  $("#chart-container").show();
+
+  // hide filter and historial
+  if (!$("#search-filter-row").is(":hidden")) {
+    $("#search-filter-btn").click();
+  }
+
+  if (!$("#search-history-container").is(":hidden")) {
+    $("#search-history-btn").click();
+  }
+
+  const choosedCountry = { Country, Slug, ISO2 };
+  const filters = getFiltersValues();
+  // TODO save on localstorage with filters
+  const searchObject = {
+    match: choosedCountry,
+    filters,
+    timestamp: Date.now().toString(),
+  };
+  pushObjectToHistory(searchObject);
+  showHistory();
+
+  console.log(filters);
+  getCountryData(
+    buildGetCountryDataUrl(
+      choosedCountry.Slug,
+      filters.status,
+      filters.from,
+      filters.to,
+    ),
+  ).done((data) => {
+    console.log(data);
+    getSummary.done((summaryData) => {
+      console.log(summaryData);
+      const item = summaryData.Countries.find(
+        (x) => x.CountryCode === choosedCountry.ISO2,
+      );
+
+      // assign country flag to item
+
+      $("#search-summary").empty();
+      $("#search-summary").html(`<h3></h3>`);
+
+      genericBuild($("#search-summary"), item);
+      console.log(item);
+      getCountryImages(item.CountryCode, function (countryImages) {
+        $(".bg").css(
+          "background-image",
+          `linear-gradient(
+                    to bottom,
+                    #050505,
+                    transparent,
+                    transparent
+                  ),url("${countryImages.image}")`,
+        );
+        $("#search-summary > h3").html(
+          `<img src="${countryImages.flag}" alt="country" style="width: 32px" />` +
+            "&nbsp;" +
+            choosedCountry.Country,
+        );
+      });
+      $("#search-summary").show("slow");
+
+      resetChartCanvas(chartDataGenerator(data, filters.status));
+    });
+  });
 };
