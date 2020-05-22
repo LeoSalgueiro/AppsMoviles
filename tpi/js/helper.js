@@ -219,7 +219,8 @@ const listCountriesOnSearch = (match) => {
 const presentCountryData = (Country, Slug, ISO2) => {
   // clean results
   $("#search-list-countries").html("");
-
+  $("#search-list-countries2").html("");
+  $('#watch-more').empty();
   // show
   $("#search-summary").show();
   $("#chart-container").show();
