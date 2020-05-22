@@ -226,6 +226,7 @@ const presentCountryData = (Country, Slug, ISO2) => {
   $("#watch-more").hide();
   // clean results
   $("#search-list-countries").html("");
+  $("#search-list-countries2").html("");
 
   // show
   $("#search-summary").show();
@@ -269,7 +270,6 @@ const presentCountryData = (Country, Slug, ISO2) => {
         choosedCountry.Slug,
       );
       $("#search-summary").empty();
-      $("#search-list-countries2").html("");
       $("#search-summary").html(
         `<h5 style="text-align: center"><i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;No hay datos rastreados para ${choosedCountry.Country}</h5>`,
       );
