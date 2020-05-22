@@ -105,7 +105,12 @@ const chartDataGeneratorAllStatus = (countryDataArray) => {
 };
 
 const chartDataGenerator = (countryDataArray, status) => {
-  countryDataArray = countryDataArray.filter((x) => x.Province === "");
+  const onlyCountry = countryDataArray.filter((x) => x.Province === "");
+
+  if (onlyCountry.length) {
+    countryDataArray = onlyCountry;
+  }
+
   if (status === "all") {
     return chartDataGeneratorAllStatus(countryDataArray);
   }
@@ -177,7 +182,7 @@ const searchFromHistory = (historyIndex) => {
 };
 
 const listCountriesOnSearch = (match) => {
-  $("#search-list-countries").html("");//con este no limpias el contenido, solo cambias una parte por vacio
+  $("#search-list-countries").html(""); //con este no limpias el contenido, solo cambias una parte por vacio
   $("#search-list-countries2").html("");
   //$("#search-list-countries").empty(); //esto elimina todo el contenido de ese id y los childrens
 
@@ -201,7 +206,6 @@ const listCountriesOnSearch = (match) => {
       const country = match[i];
 
       if (i >= 10) {
-        
         buildSearchResultItem2($("#search-list-countries2"), country);
         $("#search-list-countries2").hide();
       } else {
