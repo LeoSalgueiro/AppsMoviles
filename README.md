@@ -24,6 +24,11 @@ Por cada practica y/o ejercicio que por sí mismo necesite un **_index.html_**, 
 
 - [Practica 2](https://leosalgueiro.github.io/practica2) Pagina web realizada en HTML y CSS, se aplicó sobre ésta JS y JQuery. Se agregó una encuesta.
 
+
+### Trabajo Integrador - Módulo I
+
+- [Trabajo Integrador - Módulo I](https://leosalgueiro.github.io/tpi/#) Pagina web de Covid-19 Status. Diseño responsivo (Mobile First)
+
 ## Datos de la materia
 
 Universidad Nacional Arturo Jauretche - Instituto de Ingenieria y Agronomia - Ingenieria Informatica
