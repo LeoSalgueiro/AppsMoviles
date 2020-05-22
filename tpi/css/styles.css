@@ -266,7 +266,7 @@ section {
   cursor: pointer;
 }
 
-#search-list-countries {
+#search-list-countries, #search-list-countries2 {
   width: 82%;
   margin-left: 1rem;
 }

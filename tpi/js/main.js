@@ -46,6 +46,10 @@ $(function () {
           // TODO meterlo en un div
           alert("No se encontraron resultados para: " + input);
         } else {
+          if($("#search-list-countries2").children().length > 0){
+            console.log("soy mayor a cero")
+            $("#search-list-countries2").empty()
+          }
           match = match.sort((a, b) => {
             return a.Country.length - b.Country.length;
           });

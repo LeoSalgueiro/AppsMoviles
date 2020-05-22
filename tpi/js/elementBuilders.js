@@ -119,6 +119,7 @@ const buildEmptyHistory = (target) => {
 
 const seeMore = (target, match) =>{ 
   $('#watch-more').empty();//limpio el boton por si se busca de nuevo sobre lo mismo (sinoo duplica el boton)
+  $("#search-list-countries2").html("");
   target.append('<a><i class="far fa-arrow-alt-circle-down"></i></a>')
   
   $('#watch-more').click(function(){
@@ -128,10 +129,11 @@ const seeMore = (target, match) =>{
       const countryName = match[i];
       if(i>=10){
         
-        buildSearchResultItem2($("#search-list-countries"), countryName);
+        //buildSearchResultItem2($("#search-list-countries2"), countryName);
+        $("#search-list-countries2").show()
       }
       
-      //$(`#search-list-country-${countryName.Country}_${countryName.Slug}_${countryName.ISO2}`).css({'display':'true'})
+      
     }
     $('#watch-more').empty();
     var posicion = $("#watch-more").offset().top;
