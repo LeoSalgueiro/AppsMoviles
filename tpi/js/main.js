@@ -1,8 +1,18 @@
 $(function () {
-  jQuery(".datetimepicker").datetimepicker({
+  jQuery("#filter-from").datetimepicker({
     timepicker: false,
+    minDate: new Date(2020, 1 - 1, 22),
+    maxDate: "-1970/01/03",
     format: "d/m/Y",
   });
+
+  jQuery("#filter-to").datetimepicker({
+    timepicker: false,
+    minDate: new Date(2020, 1 - 1, 22),
+    maxDate: "-1970/01/02",
+    format: "d/m/Y",
+  });
+
   showHistory();
   // hide
   $("#search-summary").hide();
