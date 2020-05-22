@@ -182,7 +182,7 @@ const searchFromHistory = (historyIndex) => {
 };
 
 const listCountriesOnSearch = (match) => {
-  $("#search-list-countries").html(""); //con este no limpias el contenido, solo cambias una parte por vacio
+  $("#search-list-countries").html(""); //con este no limpias el contenido, solo cambias una parte por vacio https://media.metrolatam.com/2019/04/27/bugsbunnydiciend-45299aaed05bc27cc892ac5671deb202-1200x0.jpg
   $("#search-list-countries2").html("");
   //$("#search-list-countries").empty(); //esto elimina todo el contenido de ese id y los childrens
 
@@ -202,6 +202,7 @@ const listCountriesOnSearch = (match) => {
   //for display matchs
 
   if (match.length > 10) {
+    $("#watch-more").show();
     for (let i = 0; i < match.length; i++) {
       const country = match[i];
 
@@ -214,6 +215,7 @@ const listCountriesOnSearch = (match) => {
     }
     seeMore($("#watch-more"), match);
   } else {
+    $("#watch-more").hide();
     for (const country of match) {
       buildSearchResultItem($("#search-list-countries"), country);
     }
@@ -221,10 +223,10 @@ const listCountriesOnSearch = (match) => {
 };
 
 const presentCountryData = (Country, Slug, ISO2) => {
+  $("#watch-more").hide();
   // clean results
   $("#search-list-countries").html("");
-  $("#search-list-countries2").html("");
-  $('#watch-more').empty();
+
   // show
   $("#search-summary").show();
   $("#chart-container").show();
@@ -259,6 +261,20 @@ const presentCountryData = (Country, Slug, ISO2) => {
     ),
   ).done((data) => {
     console.log(data);
+
+    if (!data.length) {
+      // show no data tracked for this country
+      console.log(
+        "no hay datos rastreados para este país",
+        choosedCountry.Slug,
+      );
+      $("#search-summary").empty();
+      $("#search-summary").html(
+        `<h5 style="text-align: center"><i class="fas fa-exclamation-triangle fa-lg"></i>&nbsp;No hay datos rastreados para ${choosedCountry.Country}</h5>`,
+      );
+      return;
+    }
+
     getSummary.done((summaryData) => {
       console.log(summaryData);
       const item = summaryData.Countries.find(

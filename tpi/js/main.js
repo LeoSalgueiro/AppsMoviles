@@ -20,12 +20,15 @@ $(function () {
   $("#search-history-container").hide();
   $("#loader-container").fadeOut(300);
 
-  showOnlyAmongBrothers($("#summary-section"));
+  // showOnlyAmongBrothers($("#summary-section"));
+  // $("#summary").addClass("activeTab");
+
   getSummary.done((data) => {
     console.log(data);
     summary = $("#summary-section");
     genericBuild(summary, data.Global, data.Date);
   });
+
   $(".tab").click(function () {
     $(".tab").removeClass("activeTab");
     const tabIds = ["summary", "search", "aboutus"];
@@ -34,6 +37,8 @@ $(function () {
       showOnlyAmongBrothers($(`#${$(this).attr("id")}-section`));
     }
   });
+
+  $("#summary").click();
 
   $("#search-bar-btn").click(function () {
     const input = $("#search-bar-input").val();
@@ -56,9 +61,9 @@ $(function () {
           // TODO meterlo en un div
           alert("No se encontraron resultados para: " + input);
         } else {
-          if($("#search-list-countries2").children().length > 0){
-            console.log("soy mayor a cero")
-            $("#search-list-countries2").empty()
+          if ($("#search-list-countries2").children().length > 0) {
+            console.log("soy mayor a cero");
+            $("#search-list-countries2").empty();
           }
           match = match.sort((a, b) => {
             return a.Country.length - b.Country.length;
@@ -127,4 +132,8 @@ jQuery.ajaxSetup({
   complete: function () {
     $("#loader-container").fadeOut(300);
   },
+});
+
+$(".icon.responsiveNav").click(function () {
+  $(this).parent().toggleClass("responsive");
 });

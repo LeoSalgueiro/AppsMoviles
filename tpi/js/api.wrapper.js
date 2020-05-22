@@ -1,5 +1,5 @@
 const apiConf = {
-  baseUrl: "https://api.covid19api.com/",
+  baseUrl: "https://api.covid19api.com",
 };
 
 const { baseUrl } = apiConf;
@@ -26,10 +26,10 @@ const buildGetCountryDataUrl = (
 ) => {
   let dayOne = "";
   if (from === undefined || to === undefined) {
-    dayOne = "dayone/";
+    dayOne = "/dayone/";
   }
   // build url
-  let build = `${baseUrl}${dayOne}country/${countrySlug}`;
+  let build = `${baseUrl}${dayOne}/country/${countrySlug}`;
   if (status != "all") {
     build += `/status/${status}`;
   }

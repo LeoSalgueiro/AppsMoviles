@@ -84,34 +84,59 @@ p {
   transition: all 1s ease-in-out;
 }
 
+.nav {
+  overflow: hidden;
+}
+
 .nav a {
   float: left;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: white !important;
-  margin: 0 !important;
-  text-decoration: none;
-  font-size: 1rem;
-}
-.nav a:hover {
-  background-color: #003c8f;
-}
-
-.tab {
+  display: block;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.activeTab {
+.nav a:hover:not(.icon) {
+  background-color: #003c8f9b;
+}
+
+.nav a.activeTab:not(.icon) {
   background-color: #003c8f;
+  color: white;
 }
 
-@media screen and (max-width: 500px) {
+.nav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .nav a:not(.activeTab) {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a:not(.icon) {
+    float: none;
+    display: block;
+    text-align: left;
+  }
   .navcontainer {
     width: 100%;
-  }
-  .nav a {
-    width: 100%;
-    display: block;
   }
 }
 
@@ -266,7 +291,8 @@ section {
   cursor: pointer;
 }
 
-#search-list-countries, #search-list-countries2 {
+#search-list-countries,
+#search-list-countries2 {
   width: 82%;
   margin-left: 1rem;
 }

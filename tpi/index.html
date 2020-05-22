@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/about-us.css" />
-    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/share.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Svg -->
     <svg style="display: none;">
       <symbol id="magnify" viewBox="0 0 18 18" height="100%" width="100%">
@@ -68,18 +68,33 @@
   <body class="background-paper bg">
     <header class="background-primary">
       <div class="container navcontainer">
-        <nav class="row nav">
-          <a class="col-2 texton-secondary tab white" id="summary" href="#">
+        <nav
+          id="topNav"
+          class="row nav"
+          style="
+            margin-top: 0rem;
+            margin-right: 0%;
+            margin-bottom: 0rem;
+            margin-left: 0%;
+          "
+        >
+          <a class="col texton-secondary tab white" id="summary" href="#">
             <i class="fas fa-newspaper"></i>
             Novedades
           </a>
-          <a class="col-2 texton-secondary tab white" id="search" href="#">
+          <a class="col texton-secondary tab white" id="search" href="#">
             <i class="fa fa-fw fa-search"></i>
             Busqueda
           </a>
-          <a class="col-3 texton-secondary tab white" id="aboutus" href="#">
+          <a class="col texton-secondary tab white" id="aboutus" href="#">
             <i class="fas fa-map-marker-alt"></i>
             Acerca del proyecto
+          </a>
+          <a
+            href="javascript:void(0);"
+            class="icon responsiveNav background-primary"
+          >
+            <i class="fas fa-bars"></i>
           </a>
         </nav>
       </div>
