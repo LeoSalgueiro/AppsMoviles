@@ -105,6 +105,7 @@ const chartDataGeneratorAllStatus = (countryDataArray) => {
 };
 
 const chartDataGenerator = (countryDataArray, status) => {
+  countryDataArray = countryDataArray.filter((x) => x.Province === "");
   if (status === "all") {
     return chartDataGeneratorAllStatus(countryDataArray);
   }
