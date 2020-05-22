@@ -8,6 +8,7 @@ $(function () {
   $("#search-summary").hide();
   $("#search-filter-row").hide();
   $("#search-history-container").hide();
+  $("#loader-container").fadeOut(300);
 
   showOnlyAmongBrothers($("#summary-section"));
   getSummary.done((data) => {
@@ -36,7 +37,6 @@ $(function () {
                 .toLocaleLowerCase()
                 .includes(input.toLocaleLowerCase())
             ) {
-              
               match.push(country);
               break;
             }
@@ -104,4 +104,13 @@ $(function () {
         .removeClass("union");
     }
   });
+});
+
+jQuery.ajaxSetup({
+  beforeSend: function () {
+    $("#loader-container").fadeIn(300);
+  },
+  complete: function () {
+    $("#loader-container").fadeOut(300);
+  },
 });
