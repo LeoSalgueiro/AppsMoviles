@@ -227,6 +227,11 @@ const presentCountryData = (Country, Slug, ISO2) => {
   // clean results
   $("#search-list-countries").html("");
   $("#search-list-countries2").html("");
+  $("#search-list-countries2").html("");
+  $("#chart").remove();
+  $("#search-result-chart").append(
+    `<canvas id="chart" width="400" height="300"></canvas>`,
+  );
 
   // show
   $("#search-summary").show();
